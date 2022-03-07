@@ -1,0 +1,11 @@
+{
+  "env": {
+    "cypress/globals": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:cypress/recommended",
+    "plugin:chai-friendly/recommended",
+    "prettier"
+  ]
+}
