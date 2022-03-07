@@ -7,9 +7,12 @@
     "cypress:open": "cypress open"
   },
   "baseUrl": "https://dev.godiddy.com/",
-  "reporter": "cypress-multi-reporters",
+  "reporter": "mochawesome",
   "reporterOptions": {
-    "configFile": "reporter-config.json"
+    "reportDir": "cypress/results",
+    "overwrite": false,
+    "html": false,
+    "json": true
   },
   "env": {
     "apiUrl": "https://api.dev.godiddy.com/0.1.0/universal-resolver/identifiers/"

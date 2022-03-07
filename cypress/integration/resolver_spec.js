@@ -52,7 +52,7 @@ describe("Test 2: Only DID document", () => {
   });
 });
 
-describe.only("Test 3: Not found", () => {
+describe("Test 3: Not found", () => {
   it("Tests an error", () => {
     cy.request({
       method: "GET",
