@@ -12,6 +12,15 @@ describe("Test 1: Normal DID Resolution Result", () => {
     });
   });
 
+  // todo: change hardcoded
+  it("Should have header with content type", () => {
+    cy.get("@request").then((response) => {
+      expect(response.headers["content-type"].split(";")[0]).to.eq(
+        "application/ld+json"
+      );
+    });
+  });
+
   it("Should have property didDocument", () => {
     cy.get("@request").then((response) => {
       expect(response.body).to.have.property("didDocument");
@@ -40,7 +49,6 @@ describe("Test 2: Only DID document", () => {
 
   it("Should have response status 200", () => {
     cy.get("@headers").then((response) => {
-      console.log(response.body);
       expect(response.status).to.eq(200);
     });
   });
@@ -53,13 +61,14 @@ describe("Test 2: Only DID document", () => {
 });
 
 describe("Test 3: Not found", () => {
-  it("Tests an error", () => {
+  it.only("Tests an error", () => {
     cy.request({
       method: "GET",
       url: "https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pwtest",
       failOnStatusCode: false,
     }).then((response) => {
       expect(response.status).to.eq(404);
+      expect(response.body.didResolutionMetadata.error).to.eq("notFound");
     });
   });
 });
