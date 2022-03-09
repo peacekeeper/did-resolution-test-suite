@@ -4,7 +4,7 @@ describe("Test Scenario 1: DID Resolution Result", () => {
   beforeEach(() => {
     cy.request({
       method: "GET",
-      url: "https://dev.uniresolver.io/1.0/identifiers/" + normalDid,
+      url: "https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw",
     }).as("request");
   });
 
@@ -77,12 +77,13 @@ describe("Test Scenario 2: JSON-LD DID document", () => {
 });
 
 // todo : for all normal DIDs
-describe("Test Scenario 3: Representation not supported", () => {
+describe.only("Test Scenario 3: Representation not supported", () => {
   it("MUST return HTTP code 406", () => {
     cy.request({
       method: "GET",
       url: "https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw",
       failOnStatusCode: false,
+      headers: { Accept: "image/png" },
     }).then((response) => {
       expect(response.status).to.eq(406);
     });
@@ -195,8 +196,7 @@ describe("Test Scenario 7: DID URLs with fragments", () => {
   beforeEach(() => {
     cy.request({
       method: "GET",
-      url: "https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw#key-1",
-      // url: "https://dev.uniresolver.io/1.0/identifiers/did%3Asov%3AWRfXPg8dantKVubE3HX8pw%23key-1",
+      url: "https://dev.uniresolver.io/1.0/identifiers/did%3Asov%3AWRfXPg8dantKVubE3HX8pw%23key-1",
       headers: { Accept: "application/did+ld+json" },
       failOnStatusCode: false,
     }).as("headers");
