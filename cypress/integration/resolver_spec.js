@@ -1,5 +1,3 @@
-// todo : for all normal DIDs
-
 describe("Test Scenario 1: DID Resolution Result", () => {
   beforeEach(() => {
     cy.request({
@@ -39,7 +37,6 @@ describe("Test Scenario 1: DID Resolution Result", () => {
   });
 });
 
-// todo : for all normal DIDs
 describe("Test Scenario 2: JSON-LD DID document", () => {
   beforeEach(() => {
     cy.request({
@@ -76,7 +73,6 @@ describe("Test Scenario 2: JSON-LD DID document", () => {
   });
 });
 
-// todo : for all normal DIDs
 describe.only("Test Scenario 3: Representation not supported", () => {
   it("MUST return HTTP code 406", () => {
     cy.request({
@@ -90,7 +86,6 @@ describe.only("Test Scenario 3: Representation not supported", () => {
   });
 });
 
-// todo : for all deactivated DIDs
 describe("Test Scenario 4: Deactivated", () => {
   it("MUST return HTTP code 410", () => {
     cy.request({
@@ -124,7 +119,6 @@ describe("Test Scenario 4: Deactivated", () => {
   });
 });
 
-// todo : for all “non-existent DIDs”
 describe("Test Scenario 5: Not found", () => {
   it("MUST return HTTP code 404", () => {
     cy.request({
@@ -157,7 +151,6 @@ describe("Test Scenario 5: Not found", () => {
   });
 });
 
-// todo : for all “invalid DIDs”
 describe("Test Scenario 6: Invalid DID", () => {
   it("MUST return HTTP code 400", () => {
     cy.request({
@@ -190,8 +183,7 @@ describe("Test Scenario 6: Invalid DID", () => {
   });
 });
 
-// todo : for all “DID URLs with fragments”
-// all tests fail because status code is 200
+// FAILS
 describe("Test Scenario 7: DID URLs with fragments", () => {
   beforeEach(() => {
     cy.request({
