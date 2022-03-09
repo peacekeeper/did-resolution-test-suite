@@ -1,4 +1,4 @@
-describe("Test Scenario 1: DID Resolution Result", () => {
+describe.only("Test Scenario 1: DID Resolution Result", () => {
   beforeEach(() => {
     cy.request({
       method: "GET",
@@ -73,7 +73,7 @@ describe("Test Scenario 2: JSON-LD DID document", () => {
   });
 });
 
-describe.only("Test Scenario 3: Representation not supported", () => {
+describe("Test Scenario 3: Representation not supported", () => {
   it("MUST return HTTP code 406", () => {
     cy.request({
       method: "GET",
