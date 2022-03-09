@@ -1,6 +1,6 @@
 describe("Test Scenario 1: DID Resolution Result", () => {
   it("test a fixture", () => {
-    cy.fixture("../fixtures/example.json")
+    cy.fixture("../fixtures/example_dids.json")
       .its("normalDids")
       .then((list) => {
         Object.keys(list).forEach((key) => {
@@ -39,7 +39,7 @@ describe("Test Scenario 1: DID Resolution Result", () => {
 
 describe("Test Scenario 2: JSON-LD DID document", () => {
   it("test a fixture", () => {
-    cy.fixture("../fixtures/example.json")
+    cy.fixture("../fixtures/example_dids.json")
       .its("normalDids")
       .then((list) => {
         Object.keys(list).forEach((key) => {
@@ -65,7 +65,7 @@ describe("Test Scenario 2: JSON-LD DID document", () => {
 
 describe("Test Scenario 3: Representation not supported", () => {
   it("test a fixture", () => {
-    cy.fixture("../fixtures/example.json")
+    cy.fixture("../fixtures/example_dids.json")
       .its("normalDids")
       .then((list) => {
         Object.keys(list).forEach((key) => {
@@ -86,7 +86,7 @@ describe("Test Scenario 3: Representation not supported", () => {
 
 describe("Test Scenario 4: Deactivated", () => {
   it("test a fixture", () => {
-    cy.fixture("../fixtures/example.json")
+    cy.fixture("../fixtures/example_dids.json")
       .its("deacDids")
       .then((list) => {
         Object.keys(list).forEach((key) => {
@@ -111,7 +111,7 @@ describe("Test Scenario 4: Deactivated", () => {
 
 describe("Test Scenario 5: Not found", () => {
   it("test a fixture", () => {
-    cy.fixture("../fixtures/example.json")
+    cy.fixture("../fixtures/example_dids.json")
       .its("nonExisDids")
       .then((list) => {
         Object.keys(list).forEach((key) => {
@@ -135,7 +135,7 @@ describe("Test Scenario 5: Not found", () => {
 
 describe("Test Scenario 6: Invalid DID", () => {
   it("test a fixture", () => {
-    cy.fixture("../fixtures/example.json")
+    cy.fixture("../fixtures/example_dids.json")
       .its("invalidDids")
       .then((list) => {
         Object.keys(list).forEach((key) => {
@@ -161,7 +161,7 @@ describe("Test Scenario 6: Invalid DID", () => {
 
 describe("Test Scenario 7: DID URLs with fragments", () => {
   it("test a fixture", () => {
-    cy.fixture("../fixtures/example.json")
+    cy.fixture("../fixtures/example_dids.json")
       .its("fragmentDids")
       .then((list) => {
         Object.keys(list).forEach((key) => {
