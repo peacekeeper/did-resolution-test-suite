@@ -1,5 +1,5 @@
 describe("Test Scenario 1: DID Resolution Result", () => {
-  it("test a fixture", () => {
+  it("A correct DID can be resolved", () => {
     cy.fixture("../fixtures/example_dids.json")
       .its("normalDids")
       .then((list) => {
@@ -38,7 +38,7 @@ describe("Test Scenario 1: DID Resolution Result", () => {
 });
 
 describe("Test Scenario 2: JSON-LD DID document", () => {
-  it("test a fixture", () => {
+  it("A correct DID can be resolved with header input", () => {
     cy.fixture("../fixtures/example_dids.json")
       .its("normalDids")
       .then((list) => {
@@ -64,7 +64,7 @@ describe("Test Scenario 2: JSON-LD DID document", () => {
 });
 
 describe("Test Scenario 3: Representation not supported", () => {
-  it("test a fixture", () => {
+  it("Shows an error when a representation is prompted", () => {
     cy.fixture("../fixtures/example_dids.json")
       .its("normalDids")
       .then((list) => {
@@ -85,7 +85,7 @@ describe("Test Scenario 3: Representation not supported", () => {
 });
 
 describe("Test Scenario 4: Deactivated", () => {
-  it("test a fixture", () => {
+  it("Returns an HTTP code of 410 for deactivated DIDs", () => {
     cy.fixture("../fixtures/example_dids.json")
       .its("deacDids")
       .then((list) => {
@@ -110,7 +110,7 @@ describe("Test Scenario 4: Deactivated", () => {
 });
 
 describe("Test Scenario 5: Not found", () => {
-  it("test a fixture", () => {
+  it("Returns an HTTP code of 404 for non-existent DIDs", () => {
     cy.fixture("../fixtures/example_dids.json")
       .its("nonExisDids")
       .then((list) => {
@@ -134,7 +134,7 @@ describe("Test Scenario 5: Not found", () => {
 });
 
 describe("Test Scenario 6: Invalid DID", () => {
-  it("test a fixture", () => {
+  it("Returns a HTTP code of 400 for an invalid DID", () => {
     cy.fixture("../fixtures/example_dids.json")
       .its("invalidDids")
       .then((list) => {
@@ -160,7 +160,7 @@ describe("Test Scenario 6: Invalid DID", () => {
 });
 
 describe("Test Scenario 7: DID URLs with fragments", () => {
-  it("test a fixture", () => {
+  it("Can resolve a DID with a fragment", () => {
     cy.fixture("../fixtures/example_dids.json")
       .its("fragmentDids")
       .then((list) => {
