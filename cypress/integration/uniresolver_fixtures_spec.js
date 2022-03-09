@@ -5,7 +5,6 @@ describe("Test Scenario 1: DID Resolution Result", () => {
       .then((list) => {
         Object.keys(list).forEach((key) => {
           const normalDid = list[key];
-          console.log("normal did is", normalDid);
           cy.request({
             method: "GET",
             url: "https://dev.uniresolver.io/1.0/identifiers/" + normalDid,
@@ -44,7 +43,6 @@ describe("Test Scenario 2: JSON-LD DID document", () => {
       .then((list) => {
         Object.keys(list).forEach((key) => {
           const normalDid = list[key];
-          console.log("normal did is", normalDid);
           cy.request({
             method: "GET",
             url: "https://dev.uniresolver.io/1.0/identifiers/" + normalDid,
