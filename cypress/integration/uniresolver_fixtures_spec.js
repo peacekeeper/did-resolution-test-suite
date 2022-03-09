@@ -180,7 +180,7 @@ describe("Test Scenario 7: DID URLs with fragments", () => {
             expect(response.body).not.to.have.property("didDocument");
             expect(response.body).to.have.property("@context");
             //FAILS
-            // expect(response.body).to.have.property("type");
+            expect(response.body).to.have.property("type");
             expect(response.body).to.have.property("id");
             // FAILS
             expect(response.body["id"]).to.contain(fragmentDid.split("#")[0]);
