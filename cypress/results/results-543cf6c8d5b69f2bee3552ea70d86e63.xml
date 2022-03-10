@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="211.3660" tests="7" failures="7">
+  <testsuite name="Root Suite" timestamp="2022-03-10T10:35:18" tests="0" file="cypress/integration/uniresolver_fixtures_spec.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Test Scenario 1: DID Resolution Result fixtures" timestamp="2022-03-10T10:35:18" tests="1" time="30.2090" failures="1">
+    <testcase name="Test Scenario 1: DID Resolution Result fixtures A correct DID can be resolved" time="0.0000" classname="A correct DID can be resolved">
+      <failure message="`cy.request()` timed out waiting `30000ms` for a response from your server.
+
+The request we sent was:
+
+Method: GET
+URL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw
+
+No response was received within the timeout.
+
+https://on.cypress.io/request" type="CypressError"><![CDATA[CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.
+
+The request we sent was:
+
+Method: GET
+URL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw
+
+No response was received within the timeout.
+
+https://on.cypress.io/request
+    at https://dev.godiddy.com/__cypress/runner/cypress_runner.js:160652:78
+    at tryCatcher (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:13022:23)
+    at https://dev.godiddy.com/__cypress/runner/cypress_runner.js:8144:41
+    at tryCatcher (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:13022:23)
+    at Promise._settlePromiseFromHandler (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:10957:31)
+    at Promise._settlePromise (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11014:18)
+    at Promise._settlePromise0 (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11059:10)
+    at Promise._settlePromises (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11135:18)
+    at _drainQueueStep (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7729:12)
+    at _drainQueue (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7722:9)
+    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7738:5)
+    at Async.drainQueues (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7608:14)
+From Your Spec Code:
+    at eval (https://dev.godiddy.com/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:104:12)
+at Array.forEach (<anonymous>)
+    at Context.eval (https://dev.godiddy.com/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:102:25)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Test Scenario 2: JSON-LD DID document" timestamp="2022-03-10T10:35:48" tests="1" time="30.1780" failures="1">
+    <testcase name="Test Scenario 2: JSON-LD DID document A correct DID can be resolved with header input" time="0.0000" classname="A correct DID can be resolved with header input">
+      <failure message="`cy.request()` timed out waiting `30000ms` for a response from your server.
+
+The request we sent was:
+
+Method: GET
+URL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw
+
+No response was received within the timeout.
+
+https://on.cypress.io/request" type="CypressError"><![CDATA[CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.
+
+The request we sent was:
+
+Method: GET
+URL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw
+
+No response was received within the timeout.
+
+https://on.cypress.io/request
+    at https://dev.godiddy.com/__cypress/runner/cypress_runner.js:160652:78
+    at tryCatcher (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:13022:23)
+    at https://dev.godiddy.com/__cypress/runner/cypress_runner.js:8144:41
+    at tryCatcher (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:13022:23)
+    at Promise._settlePromiseFromHandler (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:10957:31)
+    at Promise._settlePromise (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11014:18)
+    at Promise._settlePromise0 (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11059:10)
+    at Promise._settlePromises (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11135:18)
+    at _drainQueueStep (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7729:12)
+    at _drainQueue (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7722:9)
+    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7738:5)
+    at Async.drainQueues (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7608:14)
+From Your Spec Code:
+    at eval (https://dev.godiddy.com/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:132:12)
+at Array.forEach (<anonymous>)
+    at Context.eval (https://dev.godiddy.com/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:130:25)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Test Scenario 3: Representation not supported" timestamp="2022-03-10T10:36:18" tests="1" time="30.1710" failures="1">
+    <testcase name="Test Scenario 3: Representation not supported Shows an error when a representation is prompted" time="0.0000" classname="Shows an error when a representation is prompted">
+      <failure message="`cy.request()` timed out waiting `30000ms` for a response from your server.
+
+The request we sent was:
+
+Method: GET
+URL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw
+
+No response was received within the timeout.
+
+https://on.cypress.io/request" type="CypressError"><![CDATA[CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.
+
+The request we sent was:
+
+Method: GET
+URL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw
+
+No response was received within the timeout.
+
+https://on.cypress.io/request
+    at https://dev.godiddy.com/__cypress/runner/cypress_runner.js:160652:78
+    at tryCatcher (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:13022:23)
+    at https://dev.godiddy.com/__cypress/runner/cypress_runner.js:8144:41
+    at tryCatcher (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:13022:23)
+    at Promise._settlePromiseFromHandler (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:10957:31)
+    at Promise._settlePromise (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11014:18)
+    at Promise._settlePromise0 (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11059:10)
+    at Promise._settlePromises (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11135:18)
+    at _drainQueueStep (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7729:12)
+    at _drainQueue (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7722:9)
+    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7738:5)
+    at Async.drainQueues (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7608:14)
+From Your Spec Code:
+    at eval (https://dev.godiddy.com/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:154:12)
+at Array.forEach (<anonymous>)
+    at Context.eval (https://dev.godiddy.com/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:152:25)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Test Scenario 4: Deactivated" timestamp="2022-03-10T10:36:49" tests="1" time="30.1630" failures="1">
+    <testcase name="Test Scenario 4: Deactivated Returns an HTTP code of 410 for deactivated DIDs" time="0.0000" classname="Returns an HTTP code of 410 for deactivated DIDs">
+      <failure message="`cy.request()` timed out waiting `30000ms` for a response from your server.
+
+The request we sent was:
+
+Method: GET
+URL: https://dev.uniresolver.io/1.0/identifiers/did:kilt:4r6RdVMNes2eEobxyxH7aVsesUqR2X175sUAXJfo7dEWxHUS
+
+No response was received within the timeout.
+
+https://on.cypress.io/request" type="CypressError"><![CDATA[CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.
+
+The request we sent was:
+
+Method: GET
+URL: https://dev.uniresolver.io/1.0/identifiers/did:kilt:4r6RdVMNes2eEobxyxH7aVsesUqR2X175sUAXJfo7dEWxHUS
+
+No response was received within the timeout.
+
+https://on.cypress.io/request
+    at https://dev.godiddy.com/__cypress/runner/cypress_runner.js:160652:78
+    at tryCatcher (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:13022:23)
+    at https://dev.godiddy.com/__cypress/runner/cypress_runner.js:8144:41
+    at tryCatcher (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:13022:23)
+    at Promise._settlePromiseFromHandler (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:10957:31)
+    at Promise._settlePromise (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11014:18)
+    at Promise._settlePromise0 (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11059:10)
+    at Promise._settlePromises (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11135:18)
+    at _drainQueueStep (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7729:12)
+    at _drainQueue (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7722:9)
+    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7738:5)
+    at Async.drainQueues (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7608:14)
+From Your Spec Code:
+    at eval (https://dev.godiddy.com/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:173:12)
+at Array.forEach (<anonymous>)
+    at Context.eval (https://dev.godiddy.com/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:171:25)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Test Scenario 5: Not found" timestamp="2022-03-10T10:37:19" tests="1" time="30.1710" failures="1">
+    <testcase name="Test Scenario 5: Not found Returns an HTTP code of 404 for non-existent DIDs" time="0.0000" classname="Returns an HTTP code of 404 for non-existent DIDs">
+      <failure message="`cy.request()` timed out waiting `30000ms` for a response from your server.
+
+The request we sent was:
+
+Method: GET
+URL: https://dev.uniresolver.io/1.0/identifiers/did:sov:0000000000000000000000
+
+No response was received within the timeout.
+
+https://on.cypress.io/request" type="CypressError"><![CDATA[CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.
+
+The request we sent was:
+
+Method: GET
+URL: https://dev.uniresolver.io/1.0/identifiers/did:sov:0000000000000000000000
+
+No response was received within the timeout.
+
+https://on.cypress.io/request
+    at https://dev.godiddy.com/__cypress/runner/cypress_runner.js:160652:78
+    at tryCatcher (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:13022:23)
+    at https://dev.godiddy.com/__cypress/runner/cypress_runner.js:8144:41
+    at tryCatcher (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:13022:23)
+    at Promise._settlePromiseFromHandler (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:10957:31)
+    at Promise._settlePromise (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11014:18)
+    at Promise._settlePromise0 (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11059:10)
+    at Promise._settlePromises (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11135:18)
+    at _drainQueueStep (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7729:12)
+    at _drainQueue (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7722:9)
+    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7738:5)
+    at Async.drainQueues (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7608:14)
+From Your Spec Code:
+    at eval (https://dev.godiddy.com/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:191:12)
+at Array.forEach (<anonymous>)
+    at Context.eval (https://dev.godiddy.com/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:189:25)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Test Scenario 6: Invalid DID" timestamp="2022-03-10T10:37:49" tests="1" time="30.2390" failures="1">
+    <testcase name="Test Scenario 6: Invalid DID Returns a HTTP code of 400 for an invalid DID" time="0.0000" classname="Returns a HTTP code of 400 for an invalid DID">
+      <failure message="`cy.request()` timed out waiting `30000ms` for a response from your server.
+
+The request we sent was:
+
+Method: GET
+URL: https://dev.uniresolver.io/1.0/identifiers/did:example_222
+
+No response was received within the timeout.
+
+https://on.cypress.io/request" type="CypressError"><![CDATA[CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.
+
+The request we sent was:
+
+Method: GET
+URL: https://dev.uniresolver.io/1.0/identifiers/did:example_222
+
+No response was received within the timeout.
+
+https://on.cypress.io/request
+    at https://dev.godiddy.com/__cypress/runner/cypress_runner.js:160652:78
+    at tryCatcher (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:13022:23)
+    at https://dev.godiddy.com/__cypress/runner/cypress_runner.js:8144:41
+    at tryCatcher (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:13022:23)
+    at Promise._settlePromiseFromHandler (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:10957:31)
+    at Promise._settlePromise (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11014:18)
+    at Promise._settlePromise0 (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11059:10)
+    at Promise._settlePromises (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11135:18)
+    at _drainQueueStep (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7729:12)
+    at _drainQueue (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7722:9)
+    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7738:5)
+    at Async.drainQueues (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7608:14)
+From Your Spec Code:
+    at eval (https://dev.godiddy.com/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:209:12)
+at Array.forEach (<anonymous>)
+    at Context.eval (https://dev.godiddy.com/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:207:25)]]></failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="Test Scenario 7: DID URLs with fragments" timestamp="2022-03-10T10:38:19" tests="1" time="30.2120" failures="1">
+    <testcase name="Test Scenario 7: DID URLs with fragments Can resolve a DID with a fragment" time="0.0000" classname="Can resolve a DID with a fragment">
+      <failure message="`cy.request()` timed out waiting `30000ms` for a response from your server.
+
+The request we sent was:
+
+Method: GET
+URL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw#key-1
+
+No response was received within the timeout.
+
+https://on.cypress.io/request" type="CypressError"><![CDATA[CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.
+
+The request we sent was:
+
+Method: GET
+URL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw#key-1
+
+No response was received within the timeout.
+
+https://on.cypress.io/request
+    at https://dev.godiddy.com/__cypress/runner/cypress_runner.js:160652:78
+    at tryCatcher (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:13022:23)
+    at https://dev.godiddy.com/__cypress/runner/cypress_runner.js:8144:41
+    at tryCatcher (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:13022:23)
+    at Promise._settlePromiseFromHandler (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:10957:31)
+    at Promise._settlePromise (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11014:18)
+    at Promise._settlePromise0 (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11059:10)
+    at Promise._settlePromises (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11135:18)
+    at _drainQueueStep (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7729:12)
+    at _drainQueue (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7722:9)
+    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7738:5)
+    at Async.drainQueues (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7608:14)
+From Your Spec Code:
+    at eval (https://dev.godiddy.com/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:227:12)
+at Array.forEach (<anonymous>)
+    at Context.eval (https://dev.godiddy.com/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:225:25)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

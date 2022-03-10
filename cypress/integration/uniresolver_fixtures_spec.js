@@ -1,4 +1,4 @@
-describe.only("Test Scenario 1: DID Resolution Result", () => {
+describe("Test Scenario 1: DID Resolution Result fixtures", () => {
   it("A correct DID can be resolved", () => {
     cy.fixture("../fixtures/example_dids.json")
       .its("normalDids")

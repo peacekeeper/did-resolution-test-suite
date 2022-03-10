@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="30.2600" tests="1" failures="1">
+  <testsuite name="Root Suite" timestamp="2022-03-10T09:59:27" tests="0" file="cypress/integration/uniresolver_fixtures_spec.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Test Scenario 1: DID Resolution Result fixtures" timestamp="2022-03-10T09:59:27" tests="1" time="30.2430" failures="1">
+    <testcase name="Test Scenario 1: DID Resolution Result fixtures A correct DID can be resolved" time="0.0000" classname="A correct DID can be resolved">
+      <failure message="`cy.request()` timed out waiting `30000ms` for a response from your server.
+
+The request we sent was:
+
+Method: GET
+URL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw
+
+No response was received within the timeout.
+
+https://on.cypress.io/request" type="CypressError"><![CDATA[CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.
+
+The request we sent was:
+
+Method: GET
+URL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw
+
+No response was received within the timeout.
+
+https://on.cypress.io/request
+    at https://dev.godiddy.com/__cypress/runner/cypress_runner.js:160652:78
+    at tryCatcher (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:13022:23)
+    at https://dev.godiddy.com/__cypress/runner/cypress_runner.js:8144:41
+    at tryCatcher (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:13022:23)
+    at Promise._settlePromiseFromHandler (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:10957:31)
+    at Promise._settlePromise (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11014:18)
+    at Promise._settlePromise0 (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11059:10)
+    at Promise._settlePromises (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:11135:18)
+    at _drainQueueStep (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7729:12)
+    at _drainQueue (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7722:9)
+    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7738:5)
+    at Async.drainQueues (https://dev.godiddy.com/__cypress/runner/cypress_runner.js:7608:14)
+From Your Spec Code:
+    at eval (https://dev.godiddy.com/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:104:12)
+at Array.forEach (<anonymous>)
+    at Context.eval (https://dev.godiddy.com/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:102:25)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

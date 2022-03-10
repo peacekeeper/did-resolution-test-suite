@@ -1,4 +1,4 @@
-describe.only("Test Scenario 1: DID Resolution Result", () => {
+describe("Test Scenario 1: DID Resolution Result overview", () => {
   beforeEach(() => {
     cy.request({
       method: "GET",
