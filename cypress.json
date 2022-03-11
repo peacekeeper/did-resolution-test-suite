@@ -19,5 +19,6 @@
     "apiUrl2": "https://dev.unirespolver.io/0.1.0/universal-resolver/identifiers/",
     "apiUrl3": "https://resolver.svip.danubetech.com/1.0/identifiers/"
   },
-  "video": false
+  "video": false,
+  "screenshotOnRunFailure": false
 }
