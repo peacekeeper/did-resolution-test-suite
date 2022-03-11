@@ -100,7 +100,7 @@ describe("Test Scenario 4: Deactivated", () => {
               'application/ld+json;profile="https://w3id.org/did-resolution"'
             );
             //FAILS
-            // expect(response.body.didResolutionMetadata.deactivated).to.eq(true);
+            expect(response.body.didResolutionMetadata.deactivated).to.eq(true);
           });
         });
       });
@@ -173,6 +173,7 @@ describe("Test Scenario 7: DID URLs with fragments", () => {
           }).as("request");
 
           cy.get("@request").then((response) => {
+            console.log(response);
             expect(response.status).to.eq(200);
             expect(response.headers["content-type"]).to.contain(
               "application/did+ld+json"

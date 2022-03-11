@@ -15,7 +15,8 @@
     "posttest": "npm run combine-reports && npm run generate-report",
     "slack-message": "npx cypress-slack-reporter --report-dir cypress/reports/mochareports/",
     "slack-message-2": "npx cypress-slack-reporter --report-dir cypress/reports/mochareports --ci-provider custom --custom-url ~/cypress/reports/mochareports/report.html",
-    "test": "npm run scripts || npm run posttest"
+    "test": "npm run scripts || npm run posttest",
+    "final": "npx cypress-slack-reporter --report-dir cypress/reports/mochareports --ci-provider custom --custom-url https://github.com/danubetech/did-resolution-test-suite/blob/slack-reporter"
   },
   "devDependencies": {
     "cypress": "^9.5.1",
