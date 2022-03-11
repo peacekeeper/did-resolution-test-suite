@@ -6,7 +6,6 @@
   "scripts": {
     "cypress:open": "cypress open"
   },
-  "baseUrl": "https://dev.godiddy.com/",
   "reporter": "mochawesome",
   "reporterOptions": {
     "reportDir": "cypress/reports/mocha",
