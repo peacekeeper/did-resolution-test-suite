@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2022-03-14T11:24:41.351Z",
-    "end": "2022-03-14T11:25:11.471Z",
-    "duration": 30120,
+    "failures": 0,
+    "start": "2022-03-14T13:52:18.883Z",
+    "end": "2022-03-14T13:52:20.020Z",
+    "duration": 1137,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "1a327ccb-4d79-479f-a68e-91b402c999a3",
+      "uuid": "2a2dd323-6b8c-4a4d-b1ca-ffa63101946e",
       "title": "",
       "fullFile": "cypress/integration/resolver_spec.js",
       "file": "cypress/integration/resolver_spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "281ae0e3-dd84-46cd-a977-a52c1af7b8c2",
+          "uuid": "d517d550-b8d3-4fad-9fa9-61116b31b4ee",
           "title": "Test Scenario 1: DID Resolution Result overview",
           "fullFile": "",
           "file": "",
@@ -38,33 +38,29 @@
               "title": "MUST return HTTP code 200",
               "fullTitle": "Test Scenario 1: DID Resolution Result overview MUST return HTTP code 200",
               "timedOut": null,
-              "duration": 30062,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 1117,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
               "code": "cy.get(\"@request\").then(response => {\n  expect(response.status).to.eq(200);\n});",
-              "err": {
-                "message": "CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Test Scenario 1: DID Resolu...`",
-                "estack": "CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Test Scenario 1: DID Resolu...`\n    at http://localhost:57130/__cypress/runner/cypress_runner.js:160652:78\n    at tryCatcher (http://localhost:57130/__cypress/runner/cypress_runner.js:13022:23)\n    at http://localhost:57130/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (http://localhost:57130/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:57130/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:57130/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:57130/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:57130/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:57130/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:57130/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:57130/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:57130/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:57130/__cypress/tests?p=cypress/integration/resolver_spec.js:101:8)",
-                "diff": null
-              },
-              "uuid": "48901c2e-e617-444e-94ed-aef7d83a9a84",
-              "parentUUID": "281ae0e3-dd84-46cd-a977-a52c1af7b8c2",
+              "err": {},
+              "uuid": "354ea126-a8b2-4ffc-957e-00989db3668a",
+              "parentUUID": "d517d550-b8d3-4fad-9fa9-61116b31b4ee",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "48901c2e-e617-444e-94ed-aef7d83a9a84"
+          "passes": [
+            "354ea126-a8b2-4ffc-957e-00989db3668a"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 30062,
+          "duration": 1117,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
