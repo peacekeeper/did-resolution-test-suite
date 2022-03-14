@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-03-14T09:37:33.288Z",
-    "end": "2022-03-14T09:37:34.975Z",
-    "duration": 1687,
+    "start": "2022-03-14T09:39:27.149Z",
+    "end": "2022-03-14T09:39:28.376Z",
+    "duration": 1227,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "8051fe65-153a-445e-9108-67d47e6dac28",
+      "uuid": "5cb42d9b-ef4d-4ef6-b680-256c8d0909b4",
       "title": "",
       "fullFile": "cypress/integration/resolver_spec.js",
       "file": "cypress/integration/resolver_spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "613d5c2e-0485-495e-bec6-659c38993526",
+          "uuid": "cf96a322-7978-4919-b747-60b53a6e7343",
           "title": "Test Scenario 1: DID Resolution Result overview",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "MUST return HTTP code 200",
               "fullTitle": "Test Scenario 1: DID Resolution Result overview MUST return HTTP code 200",
               "timedOut": null,
-              "duration": 1655,
+              "duration": 1205,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.get(\"@request\").then(response => {\n  expect(response.status).to.eq(200);\n});",
               "err": {},
-              "uuid": "0491c13c-203f-4f31-b670-47398086f83e",
-              "parentUUID": "613d5c2e-0485-495e-bec6-659c38993526",
+              "uuid": "346690f5-e5f9-44f2-959b-d07e45e8c15e",
+              "parentUUID": "cf96a322-7978-4919-b747-60b53a6e7343",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "0491c13c-203f-4f31-b670-47398086f83e"
+            "346690f5-e5f9-44f2-959b-d07e45e8c15e"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1655,
+          "duration": 1205,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
