@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-03-14T16:41:04.475Z",
-    "end": "2022-03-14T16:41:06.529Z",
-    "duration": 2054,
+    "start": "2022-03-14T17:27:24.731Z",
+    "end": "2022-03-14T17:27:26.113Z",
+    "duration": 1382,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "1d083e26-07e7-466e-89a2-a6502f3c3238",
+      "uuid": "690794ab-9fd7-4df5-9576-d9e15e639b16",
       "title": "",
       "fullFile": "cypress/integration/resolver_spec.js",
       "file": "cypress/integration/resolver_spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "a10526a9-949c-4fa2-b80d-17eb7cc683a7",
+          "uuid": "7638388f-ab30-4fe3-a4aa-82e1fba87000",
           "title": "Test Scenario 1: DID Resolution Result overview: https://dev.uniresolver.io/1.0/identifiers/",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "MUST return HTTP code 200",
               "fullTitle": "Test Scenario 1: DID Resolution Result overview: https://dev.uniresolver.io/1.0/identifiers/ MUST return HTTP code 200",
               "timedOut": null,
-              "duration": 2036,
+              "duration": 1361,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.get(\"@request\").then(response => {\n  expect(response.status).to.eq(200);\n});",
               "err": {},
-              "uuid": "07144dd1-d784-449b-8bc0-bf414c286d42",
-              "parentUUID": "a10526a9-949c-4fa2-b80d-17eb7cc683a7",
+              "uuid": "4df51341-7f51-4529-a2d1-4e4df67697eb",
+              "parentUUID": "7638388f-ab30-4fe3-a4aa-82e1fba87000",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "07144dd1-d784-449b-8bc0-bf414c286d42"
+            "4df51341-7f51-4529-a2d1-4e4df67697eb"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2036,
+          "duration": 1361,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

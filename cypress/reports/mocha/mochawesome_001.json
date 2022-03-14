@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-03-14T16:41:07.600Z",
-    "end": "2022-03-14T16:41:08.474Z",
-    "duration": 874,
+    "start": "2022-03-14T17:27:27.172Z",
+    "end": "2022-03-14T17:27:28.000Z",
+    "duration": 828,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "e2ea7639-a038-4072-81d4-28ae48b9bd92",
+      "uuid": "4ee53dac-273a-42cd-a10b-811cfd28ba6c",
       "title": "",
       "fullFile": "cypress/integration/uniresolver_fixtures_spec.js",
       "file": "cypress/integration/uniresolver_fixtures_spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "3a5eb6dc-edc9-4196-b583-7df2887a2400",
+          "uuid": "e11f92be-fc32-43f1-83ae-8a04d3295dfd",
           "title": "Test Scenario 1: DID Resolution Result fixtures: https://dev.uniresolver.io/1.0/identifiers/",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "A correct DID can be resolved",
               "fullTitle": "Test Scenario 1: DID Resolution Result fixtures: https://dev.uniresolver.io/1.0/identifiers/ A correct DID can be resolved",
               "timedOut": null,
-              "duration": 864,
+              "duration": 808,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"normalDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const normalDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: endpoint + normalDid\n    }).as(\"request\");\n    cy.get(\"@request\").then(response => {\n      cy.log(Cypress.env(\"apiUrl\"));\n      expect(response.status).to.eq(200);\n    }); // cy.get(\"@request\").then((response) => {\n    //   expect(response.headers[\"content-type\"]).to.contain(\n    //     'application/ld+json;profile=\"https://w3id.org/did-resolution'\n    //   );\n    // });\n    //\n    // cy.get(\"@request\").then((response) => {\n    //   expect(response.body).to.have.property(\"didDocument\");\n    // });\n    //\n    // cy.get(\"@request\").then((response) => {\n    //   expect(response.body).to.have.property(\"didResolutionMetadata\");\n    // });\n    //\n    // cy.get(\"@request\").then((response) => {\n    //   expect(response.body).to.have.property(\"didDocumentMetadata\");\n    // });\n  });\n});",
               "err": {},
-              "uuid": "f61ac4dc-6c24-40e0-91e8-15966980b74b",
-              "parentUUID": "3a5eb6dc-edc9-4196-b583-7df2887a2400",
+              "uuid": "26bed38a-b38c-40f6-84e8-4996bed15496",
+              "parentUUID": "e11f92be-fc32-43f1-83ae-8a04d3295dfd",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "f61ac4dc-6c24-40e0-91e8-15966980b74b"
+            "26bed38a-b38c-40f6-84e8-4996bed15496"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 864,
+          "duration": 808,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
