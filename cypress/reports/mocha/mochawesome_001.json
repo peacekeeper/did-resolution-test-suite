@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2022-03-14T09:39:29.339Z",
-    "end": "2022-03-14T09:39:30.057Z",
-    "duration": 718,
+    "start": "2022-03-14T09:49:17.688Z",
+    "end": "2022-03-14T09:49:18.510Z",
+    "duration": 822,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "194d2a81-7eb1-47ec-bffc-41928d21632f",
+      "uuid": "24904949-6447-478a-8d51-2a06febe167d",
       "title": "",
       "fullFile": "cypress/integration/uniresolver_fixtures_spec.js",
       "file": "cypress/integration/uniresolver_fixtures_spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "f8bb5ace-b749-4e48-b1f6-60ed8198ed52",
+          "uuid": "5a208b6f-68f6-4457-a818-d171316a422e",
           "title": "Test Scenario 1: DID Resolution Result fixtures",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "A correct DID can be resolved",
               "fullTitle": "Test Scenario 1: DID Resolution Result fixtures A correct DID can be resolved",
               "timedOut": null,
-              "duration": 702,
+              "duration": 808,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"normalDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const normalDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: \"https://dev.uniresolver.io/1.0/identifiers/\" + normalDid\n    }).as(\"request\");\n    cy.get(\"@request\").then(response => {\n      expect(response.status).to.eq(200);\n    }); // cy.get(\"@request\").then((response) => {\n    //   expect(response.headers[\"content-type\"]).to.contain(\n    //     'application/ld+json;profile=\"https://w3id.org/did-resolution'\n    //   );\n    // });\n    //\n    // cy.get(\"@request\").then((response) => {\n    //   expect(response.body).to.have.property(\"didDocument\");\n    // });\n    //\n    // cy.get(\"@request\").then((response) => {\n    //   expect(response.body).to.have.property(\"didResolutionMetadata\");\n    // });\n    //\n    // cy.get(\"@request\").then((response) => {\n    //   expect(response.body).to.have.property(\"didDocumentMetadata\");\n    // });\n  });\n});",
               "err": {},
-              "uuid": "a1e5826a-e601-4dcd-a2c7-2ebf96e4bb9d",
-              "parentUUID": "f8bb5ace-b749-4e48-b1f6-60ed8198ed52",
+              "uuid": "8a59e5aa-6d3a-46da-b33e-a10dca959ab4",
+              "parentUUID": "5a208b6f-68f6-4457-a818-d171316a422e",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a1e5826a-e601-4dcd-a2c7-2ebf96e4bb9d"
+            "8a59e5aa-6d3a-46da-b33e-a10dca959ab4"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 702,
+          "duration": 808,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
