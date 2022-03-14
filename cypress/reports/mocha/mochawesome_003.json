@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-03-14T10:53:55.156Z",
+    "end": "2022-03-14T10:53:55.546Z",
+    "duration": 390,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d8eded65-770b-4b55-851a-c47dce9c62a3",
+      "title": "",
+      "fullFile": "cypress/integration/uniresolver_fixtures_spec.js",
+      "file": "cypress/integration/uniresolver_fixtures_spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "749b2672-526c-4d21-8d2c-0996cac03431",
+          "title": "Test Scenario 1: DID Resolution Result fixtures",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "A correct DID can be resolved",
+              "fullTitle": "Test Scenario 1: DID Resolution Result fixtures A correct DID can be resolved",
+              "timedOut": null,
+              "duration": 350,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"normalDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const normalDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: apiUrl + normalDid\n    }).as(\"request\");\n    cy.get(\"@request\").then(response => {\n      expect(response.status).to.eq(200);\n    }); // cy.get(\"@request\").then((response) => {\n    //   expect(response.headers[\"content-type\"]).to.contain(\n    //     'application/ld+json;profile=\"https://w3id.org/did-resolution'\n    //   );\n    // });\n    //\n    // cy.get(\"@request\").then((response) => {\n    //   expect(response.body).to.have.property(\"didDocument\");\n    // });\n    //\n    // cy.get(\"@request\").then((response) => {\n    //   expect(response.body).to.have.property(\"didResolutionMetadata\");\n    // });\n    //\n    // cy.get(\"@request\").then((response) => {\n    //   expect(response.body).to.have.property(\"didDocumentMetadata\");\n    // });\n  });\n});",
+              "err": {
+                "message": "CypressError: `cy.request()` failed on:\n\nhttps://api.dev.godiddy.com/0.1.0/universal-resolver/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://api.dev.godiddy.com/0.1.0/universal-resolver/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.5.1 Chrome/94.0.4606.81 Electron/15.3.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Mon, 14 Mar 2022 10:49:50 GMT\",\n  \"content-type\": \"application/json\",\n  \"content-length\": \"227\",\n  \"connection\": \"keep-alive\",\n  \"set-cookie\": [\n    \"INGRESSCOOKIE=9ff5024db88a40cd95a70a0867dcce34|2a13486e7845b9a91d3b87afe997c0d7; Path=/0.1.0/; Secure; HttpOnly\"\n  ],\n  \"vary\": \"Origin, Access-Control-Request-Method, Access-Control-Request-Headers\",\n  \"strict-transport-security\": \"max-age=15724800; includeSubDomains\"\n}\nBody: {\n  \"timestamp\": 1647255235596,\n  \"path\": \"/0.1.0/universal-resolver/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\",\n  \"status\": 500,\n  \"error\": \"Internal Server Error\",\n  \"requestId\": \"a4b29845-4, L:/192.168.12.244:21080 - R:/192.168.202.171:51190\"\n}\n\n\nhttps://on.cypress.io/request",
+                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://api.dev.godiddy.com/0.1.0/universal-resolver/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://api.dev.godiddy.com/0.1.0/universal-resolver/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.5.1 Chrome/94.0.4606.81 Electron/15.3.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Mon, 14 Mar 2022 10:49:50 GMT\",\n  \"content-type\": \"application/json\",\n  \"content-length\": \"227\",\n  \"connection\": \"keep-alive\",\n  \"set-cookie\": [\n    \"INGRESSCOOKIE=9ff5024db88a40cd95a70a0867dcce34|2a13486e7845b9a91d3b87afe997c0d7; Path=/0.1.0/; Secure; HttpOnly\"\n  ],\n  \"vary\": \"Origin, Access-Control-Request-Method, Access-Control-Request-Headers\",\n  \"strict-transport-security\": \"max-age=15724800; includeSubDomains\"\n}\nBody: {\n  \"timestamp\": 1647255235596,\n  \"path\": \"/0.1.0/universal-resolver/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\",\n  \"status\": 500,\n  \"error\": \"Internal Server Error\",\n  \"requestId\": \"a4b29845-4, L:/192.168.12.244:21080 - R:/192.168.202.171:51190\"\n}\n\n\nhttps://on.cypress.io/request\n    at http://localhost:56173/__cypress/runner/cypress_runner.js:160634:80\n    at tryCatcher (http://localhost:56173/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:56173/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:56173/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:56173/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:56173/__cypress/runner/cypress_runner.js:11139:18)\n    at _drainQueueStep (http://localhost:56173/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:56173/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:56173/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:56173/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at eval (http://localhost:56173/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:105:12)\nat Array.forEach (<anonymous>)\n    at Context.eval (http://localhost:56173/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:103:25)",
+                "diff": null
+              },
+              "uuid": "72349d88-720a-4e0b-ba0a-e038e8f615ee",
+              "parentUUID": "749b2672-526c-4d21-8d2c-0996cac03431",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "72349d88-720a-4e0b-ba0a-e038e8f615ee"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 350,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports/mocha",
+        "configFile": "reporterOpts.json",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.1.1"
+    }
+  }
+}

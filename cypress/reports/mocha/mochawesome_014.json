@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 1,
-    "start": "2022-03-14T10:50:25.819Z",
-    "end": "2022-03-14T10:50:55.952Z",
-    "duration": 30133,
+    "start": "2022-03-14T11:39:26.147Z",
+    "end": "2022-03-14T11:39:56.255Z",
+    "duration": 30108,
     "testsRegistered": 1,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "182098e3-fc3c-478d-a1eb-23a8d0041789",
+      "uuid": "f2aad581-654d-44c3-aedd-0eb04aeecb3b",
       "title": "",
       "fullFile": "cypress/integration/resolver_spec.js",
       "file": "cypress/integration/resolver_spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "4c6fd94d-d923-4ce1-ad3b-3432f2bf9f41",
+          "uuid": "7a74ec3e-1551-4541-8ce1-c8ba83c16df2",
           "title": "Test Scenario 1: DID Resolution Result overview",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "MUST return HTTP code 200",
               "fullTitle": "Test Scenario 1: DID Resolution Result overview MUST return HTTP code 200",
               "timedOut": null,
-              "duration": 30074,
+              "duration": 30068,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -48,11 +48,11 @@
               "code": "cy.get(\"@request\").then(response => {\n  expect(response.status).to.eq(200);\n});",
               "err": {
                 "message": "CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Test Scenario 1: DID Resolu...`",
-                "estack": "CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Test Scenario 1: DID Resolu...`\n    at http://localhost:56101/__cypress/runner/cypress_runner.js:160652:78\n    at tryCatcher (http://localhost:56101/__cypress/runner/cypress_runner.js:13022:23)\n    at http://localhost:56101/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (http://localhost:56101/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:56101/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:56101/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:56101/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:56101/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:56101/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:56101/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:56101/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:56101/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:56101/__cypress/tests?p=cypress/integration/resolver_spec.js:101:8)",
+                "estack": "CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Test Scenario 1: DID Resolu...`\n    at http://localhost:57496/__cypress/runner/cypress_runner.js:160652:78\n    at tryCatcher (http://localhost:57496/__cypress/runner/cypress_runner.js:13022:23)\n    at http://localhost:57496/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (http://localhost:57496/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:57496/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:57496/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:57496/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:57496/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:57496/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:57496/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:57496/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:57496/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:57496/__cypress/tests?p=cypress/integration/resolver_spec.js:101:8)",
                 "diff": null
               },
-              "uuid": "cd583ad5-9e94-4d91-bf39-5740323aead4",
-              "parentUUID": "4c6fd94d-d923-4ce1-ad3b-3432f2bf9f41",
+              "uuid": "34f1490b-15b2-4f38-9efb-14a4a72513bc",
+              "parentUUID": "7a74ec3e-1551-4541-8ce1-c8ba83c16df2",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "cd583ad5-9e94-4d91-bf39-5740323aead4"
+            "34f1490b-15b2-4f38-9efb-14a4a72513bc"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 30074,
+          "duration": 30068,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

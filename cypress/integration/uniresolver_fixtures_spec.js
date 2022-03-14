@@ -1,3 +1,5 @@
+const apiUrl = Cypress.env("apiUrl");
+
 describe("Test Scenario 1: DID Resolution Result fixtures", () => {
   it.only("A correct DID can be resolved", () => {
     cy.fixture("../fixtures/example_dids.json")
@@ -11,6 +13,7 @@ describe("Test Scenario 1: DID Resolution Result fixtures", () => {
           }).as("request");
 
           cy.get("@request").then((response) => {
+            cy.log(Cypress.env("apiUrl"));
             expect(response.status).to.eq(200);
           });
 
