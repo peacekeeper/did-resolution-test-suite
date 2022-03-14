@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 1,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2022-03-14T09:49:15.074Z",
-    "end": "2022-03-14T09:49:16.680Z",
-    "duration": 1606,
+    "failures": 1,
+    "start": "2022-03-14T10:43:07.789Z",
+    "end": "2022-03-14T10:43:37.930Z",
+    "duration": 30141,
     "testsRegistered": 1,
-    "passPercent": 100,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "a5d0f307-5474-4a1e-9eb8-f798061b9918",
+      "uuid": "e0236917-7ee3-430e-a4d5-9af6dfecbd0c",
       "title": "",
       "fullFile": "cypress/integration/resolver_spec.js",
       "file": "cypress/integration/resolver_spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c70d207a-f44b-4b48-9d7e-3bdde7f7706a",
+          "uuid": "c609b732-c00c-42f6-80e6-0055e9493544",
           "title": "Test Scenario 1: DID Resolution Result overview",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,33 @@
               "title": "MUST return HTTP code 200",
               "fullTitle": "Test Scenario 1: DID Resolution Result overview MUST return HTTP code 200",
               "timedOut": null,
-              "duration": 1583,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
+              "duration": 30076,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
               "code": "cy.get(\"@request\").then(response => {\n  expect(response.status).to.eq(200);\n});",
-              "err": {},
-              "uuid": "b1375b98-7868-41e0-9c6b-a35d3965102c",
-              "parentUUID": "c70d207a-f44b-4b48-9d7e-3bdde7f7706a",
+              "err": {
+                "message": "CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Test Scenario 1: DID Resolu...`",
+                "estack": "CypressError: `cy.request()` timed out waiting `30000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Test Scenario 1: DID Resolu...`\n    at http://localhost:55962/__cypress/runner/cypress_runner.js:160652:78\n    at tryCatcher (http://localhost:55962/__cypress/runner/cypress_runner.js:13022:23)\n    at http://localhost:55962/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (http://localhost:55962/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:55962/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:55962/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:55962/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:55962/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:55962/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:55962/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:55962/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:55962/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at Context.eval (http://localhost:55962/__cypress/tests?p=cypress/integration/resolver_spec.js:101:8)",
+                "diff": null
+              },
+              "uuid": "c745b59a-c3c8-49fd-9c80-27a4af38083a",
+              "parentUUID": "c609b732-c00c-42f6-80e6-0055e9493544",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "b1375b98-7868-41e0-9c6b-a35d3965102c"
+          "passes": [],
+          "failures": [
+            "c745b59a-c3c8-49fd-9c80-27a4af38083a"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 1583,
+          "duration": 30076,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
