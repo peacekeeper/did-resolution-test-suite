@@ -12,5 +12,4 @@ title: Home
 
 This is a [Report](https://danubetech.github.io/did-resolution-test-suite/reports/report.html) file.
 
-{% capture x %}{% include report.json %}{% endcapture %}
-{% jsonball foo from var x %}
+{% include 2022-03-14-10-report.html %}
