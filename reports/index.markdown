@@ -10,7 +10,7 @@ layout: default
 title: Home
 ---
 
-This is a [Markdown](http://htmlpreview.github.io/?https://danubetech.github.io/did-resolution-test-suite/cypress/reports/mochareports/report.html) file.
+This is a [Report](https://danubetech.github.io/did-resolution-test-suite/reports/report.html) file.
 
-{% include report.html %}
-
+{% capture x %}{% include report.json %}{% endcapture %}
+{% jsonball foo from var x %}
