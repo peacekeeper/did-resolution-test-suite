@@ -1,6 +1,6 @@
 const endpoint = Cypress.env("endpoint");
 
-describe("Test Scenario 1: DID Resolution Result fixtures", () => {
+describe("Test Scenario 1: DID Resolution Result fixtures: " + endpoint, () => {
   it("A correct DID can be resolved", () => {
     cy.fixture("../fixtures/example_dids.json")
       .its("normalDids")
@@ -102,7 +102,6 @@ describe("Test Scenario 4: Deactivated", () => {
             expect(response.headers["content-type"]).to.contain(
               'application/ld+json;profile="https://w3id.org/did-resolution"'
             );
-            //FAILS
             expect(response.body.didResolutionMetadata.deactivated).to.eq(true);
           });
         });

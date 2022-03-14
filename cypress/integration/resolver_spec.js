@@ -1,6 +1,5 @@
 const endpoint = Cypress.env("endpoint");
-
-describe("Test Scenario 1: DID Resolution Result overview", () => {
+describe("Test Scenario 1: DID Resolution Result overview: " + endpoint, () => {
   beforeEach(() => {
     cy.request({
       method: "GET",
@@ -109,13 +108,12 @@ describe("Test Scenario 4: Deactivated", () => {
       );
     });
   });
-  it("JSON object MUST contain property didDocumentMetadata.deactivated = true", () => {
+  it("JSON object MUST contain property didResolutionMetdadata.deactivated = true", () => {
     cy.request({
       method: "GET",
       url: "https://dev.uniresolver.io/1.0/identifiers/did:kilt:4r6RdVMNes2eEobxyxH7aVsesUqR2X175sUAXJfo7dEWxHUS",
       failOnStatusCode: false,
     }).then((response) => {
-      console.log(response.body.didResolutionMetadata);
       expect(response.body.didResolutionMetadata.deactivated).to.eq(true);
     });
   });
