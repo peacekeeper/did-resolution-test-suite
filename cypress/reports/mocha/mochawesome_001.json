@@ -1,15 +1,15 @@
 {
   "stats": {
-    "suites": 1,
-    "tests": 1,
-    "passes": 0,
+    "suites": 7,
+    "tests": 7,
+    "passes": 4,
     "pending": 0,
-    "failures": 1,
-    "start": "2022-03-14T13:50:55.557Z",
-    "end": "2022-03-14T13:50:55.711Z",
-    "duration": 154,
-    "testsRegistered": 1,
-    "passPercent": 0,
+    "failures": 3,
+    "start": "2022-03-14T14:07:56.519Z",
+    "end": "2022-03-14T14:08:00.601Z",
+    "duration": 4082,
+    "testsRegistered": 7,
+    "passPercent": 57.14285714285714,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "b5b86d35-7598-478f-9e3b-e3ced2e3c3a9",
+      "uuid": "2e0d1829-c186-470b-93a3-a5b156454534",
       "title": "",
       "fullFile": "cypress/integration/uniresolver_fixtures_spec.js",
       "file": "cypress/integration/uniresolver_fixtures_spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "c9e7350f-ceb4-4fca-b5b9-987bd395ec88",
+          "uuid": "6b9f5f81-7cb1-4dd6-862f-f69e1928b23d",
           "title": "Test Scenario 1: DID Resolution Result fixtures",
           "fullFile": "",
           "file": "",
@@ -38,21 +38,21 @@
               "title": "A correct DID can be resolved",
               "fullTitle": "Test Scenario 1: DID Resolution Result fixtures A correct DID can be resolved",
               "timedOut": null,
-              "duration": 108,
+              "duration": 1370,
               "state": "failed",
               "speed": null,
               "pass": false,
               "fail": true,
               "pending": false,
               "context": null,
-              "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"normalDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const normalDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: \"https://api.dev.godiddy.com/0.1.0/universal-resolver/identifiers/\" + normalDid\n    }).as(\"request\");\n    cy.get(\"@request\").then(response => {\n      cy.log(Cypress.env(\"apiUrl\"));\n      expect(response.status).to.eq(200);\n    }); // cy.get(\"@request\").then((response) => {\n    //   expect(response.headers[\"content-type\"]).to.contain(\n    //     'application/ld+json;profile=\"https://w3id.org/did-resolution'\n    //   );\n    // });\n    //\n    // cy.get(\"@request\").then((response) => {\n    //   expect(response.body).to.have.property(\"didDocument\");\n    // });\n    //\n    // cy.get(\"@request\").then((response) => {\n    //   expect(response.body).to.have.property(\"didResolutionMetadata\");\n    // });\n    //\n    // cy.get(\"@request\").then((response) => {\n    //   expect(response.body).to.have.property(\"didDocumentMetadata\");\n    // });\n  });\n});",
+              "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"normalDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const normalDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: endpoint + normalDid\n    }).as(\"request\");\n    cy.get(\"@request\").then(response => {\n      cy.log(Cypress.env(\"apiUrl\"));\n      expect(response.status).to.eq(200);\n    });\n    cy.get(\"@request\").then(response => {\n      expect(response.headers[\"content-type\"]).to.contain('application/ld+json;profile=\"https://w3id.org/did-resolution');\n    });\n    cy.get(\"@request\").then(response => {\n      expect(response.body).to.have.property(\"didDocument\");\n    });\n    cy.get(\"@request\").then(response => {\n      expect(response.body).to.have.property(\"didResolutionMetadata\");\n    });\n    cy.get(\"@request\").then(response => {\n      expect(response.body).to.have.property(\"didDocumentMetadata\");\n    });\n  });\n});",
               "err": {
-                "message": "CypressError: `cy.request()` failed on:\n\nhttps://api.dev.godiddy.com/0.1.0/universal-resolver/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://api.dev.godiddy.com/0.1.0/universal-resolver/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.5.1 Chrome/94.0.4606.81 Electron/15.3.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"cookie\": \"INGRESSCOOKIE=9ff5024db88a40cd95a70a0867dcce34|2a13486e7845b9a91d3b87afe997c0d7\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Mon, 14 Mar 2022 13:46:49 GMT\",\n  \"content-type\": \"application/json\",\n  \"content-length\": \"227\",\n  \"connection\": \"keep-alive\",\n  \"vary\": \"Origin, Access-Control-Request-Method, Access-Control-Request-Headers\",\n  \"strict-transport-security\": \"max-age=15724800; includeSubDomains\"\n}\nBody: {\n  \"timestamp\": 1647265855787,\n  \"path\": \"/0.1.0/universal-resolver/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\",\n  \"status\": 500,\n  \"error\": \"Internal Server Error\",\n  \"requestId\": \"586b9534-5, L:/192.168.12.244:21080 - R:/192.168.202.171:34258\"\n}\n\n\nhttps://on.cypress.io/request",
-                "estack": "CypressError: `cy.request()` failed on:\n\nhttps://api.dev.godiddy.com/0.1.0/universal-resolver/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://api.dev.godiddy.com/0.1.0/universal-resolver/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.5.1 Chrome/94.0.4606.81 Electron/15.3.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"cookie\": \"INGRESSCOOKIE=9ff5024db88a40cd95a70a0867dcce34|2a13486e7845b9a91d3b87afe997c0d7\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"date\": \"Mon, 14 Mar 2022 13:46:49 GMT\",\n  \"content-type\": \"application/json\",\n  \"content-length\": \"227\",\n  \"connection\": \"keep-alive\",\n  \"vary\": \"Origin, Access-Control-Request-Method, Access-Control-Request-Headers\",\n  \"strict-transport-security\": \"max-age=15724800; includeSubDomains\"\n}\nBody: {\n  \"timestamp\": 1647265855787,\n  \"path\": \"/0.1.0/universal-resolver/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\",\n  \"status\": 500,\n  \"error\": \"Internal Server Error\",\n  \"requestId\": \"586b9534-5, L:/192.168.12.244:21080 - R:/192.168.202.171:34258\"\n}\n\n\nhttps://on.cypress.io/request\n    at http://localhost:59162/__cypress/runner/cypress_runner.js:160634:80\n    at tryCatcher (http://localhost:59162/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:59162/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:59162/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:59162/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:59162/__cypress/runner/cypress_runner.js:11139:18)\n    at _drainQueueStep (http://localhost:59162/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:59162/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:59162/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:59162/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at eval (http://localhost:59162/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:105:12)\nat Array.forEach (<anonymous>)\n    at Context.eval (http://localhost:59162/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:103:25)",
+                "message": "AssertionError: expected 'application/ld+json; profile=\"https://w3id.org/did-resolution\";charset=utf-8' to include 'application/ld+json;profile=\"https://w3id.org/did-resolution'",
+                "estack": "AssertionError: expected 'application/ld+json; profile=\"https://w3id.org/did-resolution\";charset=utf-8' to include 'application/ld+json;profile=\"https://w3id.org/did-resolution'\n    at Context.eval (http://localhost:59687/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:114:55)",
                 "diff": null
               },
-              "uuid": "2e99c0fc-6a35-4cfd-9f8b-2151d7a07961",
-              "parentUUID": "c9e7350f-ceb4-4fca-b5b9-987bd395ec88",
+              "uuid": "f1e0b4d5-7331-4428-a09f-9f1cd8534fd0",
+              "parentUUID": "6b9f5f81-7cb1-4dd6-862f-f69e1928b23d",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +60,253 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "2e99c0fc-6a35-4cfd-9f8b-2151d7a07961"
+            "f1e0b4d5-7331-4428-a09f-9f1cd8534fd0"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 108,
+          "duration": 1370,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "fc176f77-d82a-4578-acd1-0405d84afa75",
+          "title": "Test Scenario 2: JSON-LD DID document",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "A correct DID can be resolved with header input",
+              "fullTitle": "Test Scenario 2: JSON-LD DID document A correct DID can be resolved with header input",
+              "timedOut": null,
+              "duration": 978,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"normalDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const normalDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: \"https://dev.uniresolver.io/1.0/identifiers/\" + normalDid,\n      headers: {\n        Accept: \"application/did+ld+json\"\n      }\n    }).as(\"headers\");\n    cy.get(\"@headers\").then(response => {\n      expect(response.status).to.eq(200);\n      expect(response.headers[\"content-type\"]).to.contain(\"application/did+ld+json\");\n      expect(response.body).not.to.have.property(\"didDocument\");\n      expect(response.body).to.have.property(\"@context\");\n    });\n  });\n});",
+              "err": {},
+              "uuid": "38e81046-3f2d-4c00-b248-6a365e149954",
+              "parentUUID": "fc176f77-d82a-4578-acd1-0405d84afa75",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "38e81046-3f2d-4c00-b248-6a365e149954"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 978,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "e21bd2f3-9f6c-4ef3-93fb-c24a90d8bb0f",
+          "title": "Test Scenario 3: Representation not supported",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Shows an error when a representation is prompted",
+              "fullTitle": "Test Scenario 3: Representation not supported Shows an error when a representation is prompted",
+              "timedOut": null,
+              "duration": 642,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"normalDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const normalDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: \"https://dev.uniresolver.io/1.0/identifiers/\" + normalDid,\n      headers: {\n        Accept: \"image/png\"\n      },\n      failOnStatusCode: false\n    }).then(response => {\n      expect(response.status).to.eq(406);\n    });\n  });\n});",
+              "err": {},
+              "uuid": "8a18e57d-ed99-4dd2-99ba-7ec5ba723b06",
+              "parentUUID": "e21bd2f3-9f6c-4ef3-93fb-c24a90d8bb0f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8a18e57d-ed99-4dd2-99ba-7ec5ba723b06"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 642,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "b9bb1eb9-bd06-4f53-aa8f-ba9c54808ffb",
+          "title": "Test Scenario 4: Deactivated",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Returns an HTTP code of 410 for deactivated DIDs",
+              "fullTitle": "Test Scenario 4: Deactivated Returns an HTTP code of 410 for deactivated DIDs",
+              "timedOut": null,
+              "duration": 425,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"deacDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const deacDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: \"https://dev.uniresolver.io/1.0/identifiers/\" + deacDid,\n      failOnStatusCode: false\n    }).then(response => {\n      expect(response.status).to.eq(410);\n      expect(response.headers[\"content-type\"]).to.contain('application/ld+json;profile=\"https://w3id.org/did-resolution\"'); //FAILS\n      expect(response.body.didResolutionMetadata.deactivated).to.eq(true);\n    });\n  });\n});",
+              "err": {
+                "message": "AssertionError: expected undefined to equal true",
+                "estack": "AssertionError: expected undefined to equal true\n    at Context.eval (http://localhost:59687/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:183:70)",
+                "diff": null
+              },
+              "uuid": "df402722-a7ea-4484-a668-4b63d65b650e",
+              "parentUUID": "b9bb1eb9-bd06-4f53-aa8f-ba9c54808ffb",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "df402722-a7ea-4484-a668-4b63d65b650e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 425,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "2087f030-2245-4f1b-825f-ac19a58a76a0",
+          "title": "Test Scenario 5: Not found",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Returns an HTTP code of 404 for non-existent DIDs",
+              "fullTitle": "Test Scenario 5: Not found Returns an HTTP code of 404 for non-existent DIDs",
+              "timedOut": null,
+              "duration": 152,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"nonExisDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const nonExDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: \"https://dev.uniresolver.io/1.0/identifiers/\" + nonExDid,\n      failOnStatusCode: false\n    }).then(response => {\n      expect(response.status).to.eq(404);\n      expect(response.headers[\"content-type\"]).to.contain('application/ld+json;profile=\"https://w3id.org/did-resolution\"');\n      expect(response.body.didResolutionMetadata.error).to.eq(\"notFound\");\n    });\n  });\n});",
+              "err": {},
+              "uuid": "f6da7045-56fe-4b1b-b1df-1a255c6ef278",
+              "parentUUID": "2087f030-2245-4f1b-825f-ac19a58a76a0",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f6da7045-56fe-4b1b-b1df-1a255c6ef278"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 152,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "7ea7ec66-de83-4f44-a768-b7c0bd84a3c9",
+          "title": "Test Scenario 6: Invalid DID",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Returns a HTTP code of 400 for an invalid DID",
+              "fullTitle": "Test Scenario 6: Invalid DID Returns a HTTP code of 400 for an invalid DID",
+              "timedOut": null,
+              "duration": 277,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"invalidDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const invalidDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: \"https://dev.uniresolver.io/1.0/identifiers/\" + invalidDid,\n      failOnStatusCode: false\n    }).then(response => {\n      expect(response.status).to.eq(400);\n      expect(response.headers[\"content-type\"]).to.contain('application/ld+json;profile=\"https://w3id.org/did-resolution\"');\n      expect(response.body.didResolutionMetadata.error).to.eq(\"invalidDid\");\n    });\n  });\n});",
+              "err": {},
+              "uuid": "10ffc70d-8b71-4cd7-91e1-d8f39076e484",
+              "parentUUID": "7ea7ec66-de83-4f44-a768-b7c0bd84a3c9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "10ffc70d-8b71-4cd7-91e1-d8f39076e484"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 277,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "d0dfa0f2-62dc-4c2d-a976-ba68f3f9c62e",
+          "title": "Test Scenario 7: DID URLs with fragments",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Can resolve a DID with a fragment",
+              "fullTitle": "Test Scenario 7: DID URLs with fragments Can resolve a DID with a fragment",
+              "timedOut": null,
+              "duration": 146,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"fragmentDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const fragmentDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: \"https://dev.uniresolver.io/1.0/identifiers/\" + fragmentDid,\n      failOnStatusCode: false,\n      headers: {\n        Accept: \"application/did+ld+json\"\n      }\n    }).as(\"request\");\n    cy.get(\"@request\").then(response => {\n      console.log(response);\n      expect(response.status).to.eq(200);\n      expect(response.headers[\"content-type\"]).to.contain(\"application/did+ld+json\");\n      expect(response.body).not.to.have.property(\"didDocument\");\n      expect(response.body).to.have.property(\"@context\"); //FAILS\n      expect(response.body).to.have.property(\"type\");\n      expect(response.body).to.have.property(\"id\"); // FAILS\n      expect(response.body[\"id\"]).to.contain(fragmentDid.split(\"#\")[0]);\n    });\n  });\n});",
+              "err": {
+                "message": "AssertionError: expected 400 to equal 200",
+                "estack": "AssertionError: expected 400 to equal 200\n    at Context.eval (http://localhost:59687/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:240:38)",
+                "diff": "- 400\n+ 200\n"
+              },
+              "uuid": "7038d89c-f77d-4560-86b4-28101b6b1154",
+              "parentUUID": "d0dfa0f2-62dc-4c2d-a976-ba68f3f9c62e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "7038d89c-f77d-4560-86b4-28101b6b1154"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 146,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

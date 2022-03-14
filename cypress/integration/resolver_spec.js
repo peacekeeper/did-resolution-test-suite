@@ -1,12 +1,14 @@
+const endpoint = Cypress.env("endpoint");
+
 describe("Test Scenario 1: DID Resolution Result overview", () => {
   beforeEach(() => {
     cy.request({
       method: "GET",
-      url: "https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw",
+      url: endpoint + "did:sov:WRfXPg8dantKVubE3HX8pw",
     }).as("request");
   });
 
-  it.only("MUST return HTTP code 200", () => {
+  it("MUST return HTTP code 200", () => {
     cy.get("@request").then((response) => {
       expect(response.status).to.eq(200);
     });

@@ -1,7 +1,7 @@
-const apiUrl = Cypress.env("apiUrl");
+const endpoint = Cypress.env("endpoint");
 
 describe("Test Scenario 1: DID Resolution Result fixtures", () => {
-  it.only("A correct DID can be resolved", () => {
+  it("A correct DID can be resolved", () => {
     cy.fixture("../fixtures/example_dids.json")
       .its("normalDids")
       .then((list) => {
@@ -9,7 +9,7 @@ describe("Test Scenario 1: DID Resolution Result fixtures", () => {
           const normalDid = list[key];
           cy.request({
             method: "GET",
-            url: "https://dev.uniresolver.io/1.0/identifiers/" + normalDid,
+            url: endpoint + normalDid,
           }).as("request");
 
           cy.get("@request").then((response) => {
@@ -17,23 +17,23 @@ describe("Test Scenario 1: DID Resolution Result fixtures", () => {
             expect(response.status).to.eq(200);
           });
 
-          // cy.get("@request").then((response) => {
-          //   expect(response.headers["content-type"]).to.contain(
-          //     'application/ld+json;profile="https://w3id.org/did-resolution'
-          //   );
-          // });
-          //
-          // cy.get("@request").then((response) => {
-          //   expect(response.body).to.have.property("didDocument");
-          // });
-          //
-          // cy.get("@request").then((response) => {
-          //   expect(response.body).to.have.property("didResolutionMetadata");
-          // });
-          //
-          // cy.get("@request").then((response) => {
-          //   expect(response.body).to.have.property("didDocumentMetadata");
-          // });
+          cy.get("@request").then((response) => {
+            expect(response.headers["content-type"]).to.contain(
+              'application/ld+json;profile="https://w3id.org/did-resolution'
+            );
+          });
+
+          cy.get("@request").then((response) => {
+            expect(response.body).to.have.property("didDocument");
+          });
+
+          cy.get("@request").then((response) => {
+            expect(response.body).to.have.property("didResolutionMetadata");
+          });
+
+          cy.get("@request").then((response) => {
+            expect(response.body).to.have.property("didDocumentMetadata");
+          });
         });
       });
   });
