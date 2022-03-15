@@ -22,4 +22,3 @@ To run the tests locally:
 
 `npm run test
 `
-
