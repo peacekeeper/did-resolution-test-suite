@@ -10,6 +10,6 @@ layout: default
 title: Home
 ---
 
-This is a [Report](https://danubetech.github.io/did-resolution-test-suite/reports/reportsss.html) file.
+This is a [Report](https://danubetech.github.io/did-resolution-test-suite/reportsss.html) file.
 
 {% include reportsss.html %}
