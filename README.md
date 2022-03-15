@@ -3,7 +3,7 @@ _test suite for DID resolver_
 
 ## HTML reports
 
-This page shows the results of several API tests. The following endpoints are tested:
+This repository runs API tests for the following endpoints:
 - https://dev.uniresolver.io/1.0/identifiers/
 - https://resolver.svip.danubetech.com/1.0/identifiers/
 - https://api.godiddy.com/0.1.0/universal-resolver/identifiers/
