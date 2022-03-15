@@ -12,12 +12,12 @@ In the current version of this repository, the report of https://dev.uniresolver
 
 ### Running test suite locally
 
-To run the test headlessly only:
+To run the test only without creating reports:
 ```markdown
 cypress run
 ```
 
-To run the test headlessly only and create the reports run: 
+To run the test and create the reports: 
 
 ```markdown
 npm run test
