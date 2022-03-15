@@ -1,2 +1,29 @@
 # did-resolution-test-suite
-test suite for DID resolver 
+_test suite for DID resolver_
+
+## HTML reports
+
+This page shows the results of several API tests. The following endpoints are tested:
+- https://dev.uniresolver.io/1.0/identifiers/
+- https://resolver.svip.danubetech.com/1.0/identifiers/
+- https://api.godiddy.com/0.1.0/universal-resolver/identifiers/
+
+In the current version of this repository, the report of https://dev.uniresolver.io/1.0/identifiers/ is shown. 
+
+### Running test suite locally
+
+To run the test headlessly only:
+```markdown
+cypress run
+```
+
+To run the test headlessly only and create the reports run: 
+
+```markdown
+npm run test
+```
+
+
+### Where to find the test reports
+The results will be stored in a local folder /cypress/reports/mocha. Test results in this folder contain the result of each spec in a json format. A merged or combined result of all specs can be found in the local folder /cypress/reports/mochareports. A combined result is stored in both a json file and an HTML file. 
+
