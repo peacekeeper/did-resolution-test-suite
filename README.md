@@ -1,4 +1,18 @@
-## Welcome to GitHub Pages
+## HTML reports
+
+This page shows the results of several API tests. The following endpoints are tested:
+- https://dev.uniresolver.io/1.0/identifiers/
+- https://resolver.svip.danubetech.com/1.0/identifiers/
+- https://api.godiddy.com/0.1.0/universal-resolver/identifiers/
+
+In the current version of this repository, the report of https://dev.uniresolver.io/1.0/identifiers/ is shown. 
+
+### Running the report
+```markdown
+npm run test
+```
+
+<!-- ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/danubetech/did-resolution-test-suite/edit/slack-reporter/README.md) to maintain and preview the content for your website in Markdown files.
 
@@ -35,3 +49,4 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+ -->
