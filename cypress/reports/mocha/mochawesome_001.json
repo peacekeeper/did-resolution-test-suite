@@ -5,9 +5,9 @@
     "passes": 0,
     "pending": 0,
     "failures": 7,
-    "start": "2022-03-15T08:30:30.288Z",
-    "end": "2022-03-15T08:31:01.172Z",
-    "duration": 30884,
+    "start": "2022-03-15T10:36:38.192Z",
+    "end": "2022-03-15T10:37:08.869Z",
+    "duration": 30677,
     "testsRegistered": 7,
     "passPercent": 0,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "698921dc-1697-4e98-8613-e994e7f21d85",
+      "uuid": "f97e852d-e242-4d42-8b3b-aaba44ba29b6",
       "title": "",
       "fullFile": "cypress/integration/uniresolver_fixtures_spec.js",
       "file": "cypress/integration/uniresolver_fixtures_spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "fdcca20a-6246-4d49-83de-450ef1f636bd",
+          "uuid": "64f45130-b25f-45fe-9094-512246a5e5fe",
           "title": "Test Scenario 1: DID Resolution Result fixtures: dev uniresolver",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "A correct DID can be resolved",
               "fullTitle": "Test Scenario 1: DID Resolution Result fixtures: dev uniresolver A correct DID can be resolved",
               "timedOut": null,
-              "duration": 447,
+              "duration": 258,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -48,11 +48,11 @@
               "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"normalDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const normalDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: endpoint + normalDid\n    }).as(\"request\");\n    cy.get(\"@request\").then(response => {\n      cy.log(Cypress.env(\"apiUrl\"));\n      expect(response.status).to.eq(200);\n    });\n    cy.get(\"@request\").then(response => {\n      expect(response.headers[\"content-type\"]).to.contain('application/ld+json;profile=\"https://w3id.org/did-resolution');\n    });\n    cy.get(\"@request\").then(response => {\n      expect(response.body).to.have.property(\"didDocument\");\n    });\n    cy.get(\"@request\").then(response => {\n      expect(response.body).to.have.property(\"didResolutionMetadata\");\n    });\n    cy.get(\"@request\").then(response => {\n      expect(response.body).to.have.property(\"didDocumentMetadata\");\n    });\n  });\n});",
               "err": {
                 "message": "AssertionError: expected 'application/ld+json; profile=\"https://w3id.org/did-resolution\";charset=utf-8' to include 'application/ld+json;profile=\"https://w3id.org/did-resolution'",
-                "estack": "AssertionError: expected 'application/ld+json; profile=\"https://w3id.org/did-resolution\";charset=utf-8' to include 'application/ld+json;profile=\"https://w3id.org/did-resolution'\n    at Context.eval (http://localhost:64973/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:115:55)",
+                "estack": "AssertionError: expected 'application/ld+json; profile=\"https://w3id.org/did-resolution\";charset=utf-8' to include 'application/ld+json;profile=\"https://w3id.org/did-resolution'\n    at Context.eval (http://localhost:49961/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:115:55)",
                 "diff": null
               },
-              "uuid": "1c12ae67-316a-4826-a77c-e168d14f9e3b",
-              "parentUUID": "fdcca20a-6246-4d49-83de-450ef1f636bd",
+              "uuid": "9c623046-1bdb-4888-8b56-24a1d707bc1b",
+              "parentUUID": "64f45130-b25f-45fe-9094-512246a5e5fe",
               "isHook": false,
               "skipped": false
             }
@@ -60,17 +60,17 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "1c12ae67-316a-4826-a77c-e168d14f9e3b"
+            "9c623046-1bdb-4888-8b56-24a1d707bc1b"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 447,
+          "duration": 258,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "24d3236d-3202-4ee0-bc4d-b654f0254c30",
+          "uuid": "2dd06d01-3b4d-40ea-8865-b5b68f14ab9d",
           "title": "Test Scenario 2: JSON-LD DID document",
           "fullFile": "",
           "file": "",
@@ -81,7 +81,7 @@
               "title": "A correct DID can be resolved with header input",
               "fullTitle": "Test Scenario 2: JSON-LD DID document A correct DID can be resolved with header input",
               "timedOut": null,
-              "duration": 5042,
+              "duration": 5069,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -91,11 +91,11 @@
               "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"normalDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const normalDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: \"https://dev.uniresolver.io/1.0/identifiers/\" + normalDid,\n      headers: {\n        Accept: \"application/did+ld+json\"\n      }\n    }).as(\"headers\");\n    cy.get(\"@headers\").then(response => {\n      expect(response.status).to.eq(200);\n      expect(response.headers[\"content-type\"]).to.contain(\"application/did+ld+json\");\n      expect(response.body).not.to.have.property(\"didDocument\");\n      expect(response.body).to.have.property(\"@context\");\n    });\n  });\n});",
               "err": {
                 "message": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request",
-                "estack": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n    at http://localhost:64973/__cypress/runner/cypress_runner.js:160652:78\n    at tryCatcher (http://localhost:64973/__cypress/runner/cypress_runner.js:13022:23)\n    at http://localhost:64973/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (http://localhost:64973/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:64973/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:64973/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:64973/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:64973/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:64973/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:64973/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:64973/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:64973/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at eval (http://localhost:64973/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:135:12)\nat Array.forEach (<anonymous>)\n    at Context.eval (http://localhost:64973/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:133:25)",
+                "estack": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n    at http://localhost:49961/__cypress/runner/cypress_runner.js:160652:78\n    at tryCatcher (http://localhost:49961/__cypress/runner/cypress_runner.js:13022:23)\n    at http://localhost:49961/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (http://localhost:49961/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:49961/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:49961/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:49961/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:49961/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:49961/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:49961/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:49961/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:49961/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at eval (http://localhost:49961/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:135:12)\nat Array.forEach (<anonymous>)\n    at Context.eval (http://localhost:49961/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:133:25)",
                 "diff": null
               },
-              "uuid": "b23a6b6e-c64b-43f2-a8b4-2d565e8d6ff6",
-              "parentUUID": "24d3236d-3202-4ee0-bc4d-b654f0254c30",
+              "uuid": "a3b29abf-0fb7-4f97-897e-16b3bfbac426",
+              "parentUUID": "2dd06d01-3b4d-40ea-8865-b5b68f14ab9d",
               "isHook": false,
               "skipped": false
             }
@@ -103,17 +103,17 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "b23a6b6e-c64b-43f2-a8b4-2d565e8d6ff6"
+            "a3b29abf-0fb7-4f97-897e-16b3bfbac426"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 5042,
+          "duration": 5069,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "2b5cc383-647b-4de2-b9cc-324b5ea256af",
+          "uuid": "401c4b41-08d6-4731-87ae-d74d14e58b33",
           "title": "Test Scenario 3: Representation not supported",
           "fullFile": "",
           "file": "",
@@ -124,7 +124,7 @@
               "title": "Shows an error when a representation is prompted",
               "fullTitle": "Test Scenario 3: Representation not supported Shows an error when a representation is prompted",
               "timedOut": null,
-              "duration": 5069,
+              "duration": 5043,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -134,11 +134,11 @@
               "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"normalDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const normalDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: \"https://dev.uniresolver.io/1.0/identifiers/\" + normalDid,\n      headers: {\n        Accept: \"image/png\"\n      },\n      failOnStatusCode: false\n    }).then(response => {\n      expect(response.status).to.eq(406);\n    });\n  });\n});",
               "err": {
                 "message": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request",
-                "estack": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n    at http://localhost:64973/__cypress/runner/cypress_runner.js:160652:78\n    at tryCatcher (http://localhost:64973/__cypress/runner/cypress_runner.js:13022:23)\n    at http://localhost:64973/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (http://localhost:64973/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:64973/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:64973/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:64973/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:64973/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:64973/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:64973/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:64973/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:64973/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at eval (http://localhost:64973/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:157:12)\nat Array.forEach (<anonymous>)\n    at Context.eval (http://localhost:64973/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:155:25)",
+                "estack": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:sov:WRfXPg8dantKVubE3HX8pw\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n    at http://localhost:49961/__cypress/runner/cypress_runner.js:160652:78\n    at tryCatcher (http://localhost:49961/__cypress/runner/cypress_runner.js:13022:23)\n    at http://localhost:49961/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (http://localhost:49961/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:49961/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:49961/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:49961/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:49961/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:49961/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:49961/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:49961/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:49961/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at eval (http://localhost:49961/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:157:12)\nat Array.forEach (<anonymous>)\n    at Context.eval (http://localhost:49961/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:155:25)",
                 "diff": null
               },
-              "uuid": "8d3620b6-4b98-42b9-b1ae-c030528989e2",
-              "parentUUID": "2b5cc383-647b-4de2-b9cc-324b5ea256af",
+              "uuid": "de394b00-d78c-4e54-9eed-3f8d9e68744a",
+              "parentUUID": "401c4b41-08d6-4731-87ae-d74d14e58b33",
               "isHook": false,
               "skipped": false
             }
@@ -146,17 +146,17 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "8d3620b6-4b98-42b9-b1ae-c030528989e2"
+            "de394b00-d78c-4e54-9eed-3f8d9e68744a"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 5069,
+          "duration": 5043,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "174981ab-4257-4cef-9aad-f8f530b64419",
+          "uuid": "fe3fd63e-a445-4cff-8f20-84973e9af520",
           "title": "Test Scenario 4: Deactivated",
           "fullFile": "",
           "file": "",
@@ -167,7 +167,7 @@
               "title": "Returns an HTTP code of 410 for deactivated DIDs",
               "fullTitle": "Test Scenario 4: Deactivated Returns an HTTP code of 410 for deactivated DIDs",
               "timedOut": null,
-              "duration": 5050,
+              "duration": 5054,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -177,11 +177,11 @@
               "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"deacDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const deacDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: \"https://dev.uniresolver.io/1.0/identifiers/\" + deacDid,\n      failOnStatusCode: false\n    }).then(response => {\n      expect(response.status).to.eq(410);\n      expect(response.headers[\"content-type\"]).to.contain('application/ld+json;profile=\"https://w3id.org/did-resolution\"');\n      expect(response.body.didResolutionMetadata.deactivated).to.eq(true);\n    });\n  });\n});",
               "err": {
                 "message": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:kilt:4r6RdVMNes2eEobxyxH7aVsesUqR2X175sUAXJfo7dEWxHUS\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request",
-                "estack": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:kilt:4r6RdVMNes2eEobxyxH7aVsesUqR2X175sUAXJfo7dEWxHUS\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n    at http://localhost:64973/__cypress/runner/cypress_runner.js:160652:78\n    at tryCatcher (http://localhost:64973/__cypress/runner/cypress_runner.js:13022:23)\n    at http://localhost:64973/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (http://localhost:64973/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:64973/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:64973/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:64973/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:64973/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:64973/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:64973/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:64973/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:64973/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at eval (http://localhost:64973/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:176:12)\nat Array.forEach (<anonymous>)\n    at Context.eval (http://localhost:64973/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:174:25)",
+                "estack": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:kilt:4r6RdVMNes2eEobxyxH7aVsesUqR2X175sUAXJfo7dEWxHUS\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n    at http://localhost:49961/__cypress/runner/cypress_runner.js:160652:78\n    at tryCatcher (http://localhost:49961/__cypress/runner/cypress_runner.js:13022:23)\n    at http://localhost:49961/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (http://localhost:49961/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:49961/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:49961/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:49961/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:49961/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:49961/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:49961/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:49961/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:49961/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at eval (http://localhost:49961/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:176:12)\nat Array.forEach (<anonymous>)\n    at Context.eval (http://localhost:49961/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:174:25)",
                 "diff": null
               },
-              "uuid": "d3eaf818-eaf1-409c-89fa-63792d11f035",
-              "parentUUID": "174981ab-4257-4cef-9aad-f8f530b64419",
+              "uuid": "5501c9d5-bdf3-4a96-96ef-832baa2cb1d6",
+              "parentUUID": "fe3fd63e-a445-4cff-8f20-84973e9af520",
               "isHook": false,
               "skipped": false
             }
@@ -189,17 +189,17 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "d3eaf818-eaf1-409c-89fa-63792d11f035"
+            "5501c9d5-bdf3-4a96-96ef-832baa2cb1d6"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 5050,
+          "duration": 5054,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "8e5c1ac4-efba-486a-9fa5-e205bd2dfd4d",
+          "uuid": "7d4295c7-81d2-49eb-9579-5268d59497be",
           "title": "Test Scenario 5: Not found",
           "fullFile": "",
           "file": "",
@@ -210,7 +210,7 @@
               "title": "Returns an HTTP code of 404 for non-existent DIDs",
               "fullTitle": "Test Scenario 5: Not found Returns an HTTP code of 404 for non-existent DIDs",
               "timedOut": null,
-              "duration": 5052,
+              "duration": 5050,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -220,11 +220,11 @@
               "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"nonExisDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const nonExDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: \"https://dev.uniresolver.io/1.0/identifiers/\" + nonExDid,\n      failOnStatusCode: false\n    }).then(response => {\n      expect(response.status).to.eq(404);\n      expect(response.headers[\"content-type\"]).to.contain('application/ld+json;profile=\"https://w3id.org/did-resolution\"');\n      expect(response.body.didResolutionMetadata.error).to.eq(\"notFound\");\n    });\n  });\n});",
               "err": {
                 "message": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:sov:0000000000000000000000\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request",
-                "estack": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:sov:0000000000000000000000\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n    at http://localhost:64973/__cypress/runner/cypress_runner.js:160652:78\n    at tryCatcher (http://localhost:64973/__cypress/runner/cypress_runner.js:13022:23)\n    at http://localhost:64973/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (http://localhost:64973/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:64973/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:64973/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:64973/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:64973/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:64973/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:64973/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:64973/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:64973/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at eval (http://localhost:64973/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:194:12)\nat Array.forEach (<anonymous>)\n    at Context.eval (http://localhost:64973/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:192:25)",
+                "estack": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:sov:0000000000000000000000\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n    at http://localhost:49961/__cypress/runner/cypress_runner.js:160652:78\n    at tryCatcher (http://localhost:49961/__cypress/runner/cypress_runner.js:13022:23)\n    at http://localhost:49961/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (http://localhost:49961/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:49961/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:49961/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:49961/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:49961/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:49961/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:49961/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:49961/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:49961/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at eval (http://localhost:49961/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:194:12)\nat Array.forEach (<anonymous>)\n    at Context.eval (http://localhost:49961/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:192:25)",
                 "diff": null
               },
-              "uuid": "5cc704d9-c550-4a48-b4be-8489f33a1bcd",
-              "parentUUID": "8e5c1ac4-efba-486a-9fa5-e205bd2dfd4d",
+              "uuid": "7766bdd5-1aac-496f-bcc2-746c68a154ee",
+              "parentUUID": "7d4295c7-81d2-49eb-9579-5268d59497be",
               "isHook": false,
               "skipped": false
             }
@@ -232,17 +232,17 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "5cc704d9-c550-4a48-b4be-8489f33a1bcd"
+            "7766bdd5-1aac-496f-bcc2-746c68a154ee"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 5052,
+          "duration": 5050,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "e675b17f-5c36-46c7-8d35-ac97913bd9ce",
+          "uuid": "a8db4d8c-6458-4917-a5b5-b7092cc57bed",
           "title": "Test Scenario 6: Invalid DID",
           "fullFile": "",
           "file": "",
@@ -253,7 +253,7 @@
               "title": "Returns a HTTP code of 400 for an invalid DID",
               "fullTitle": "Test Scenario 6: Invalid DID Returns a HTTP code of 400 for an invalid DID",
               "timedOut": null,
-              "duration": 5047,
+              "duration": 5051,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -263,11 +263,11 @@
               "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"invalidDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const invalidDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: \"https://dev.uniresolver.io/1.0/identifiers/\" + invalidDid,\n      failOnStatusCode: false\n    }).then(response => {\n      expect(response.status).to.eq(400);\n      expect(response.headers[\"content-type\"]).to.contain('application/ld+json;profile=\"https://w3id.org/did-resolution\"');\n      expect(response.body.didResolutionMetadata.error).to.eq(\"invalidDid\");\n    });\n  });\n});",
               "err": {
                 "message": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:example_222\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request",
-                "estack": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:example_222\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n    at http://localhost:64973/__cypress/runner/cypress_runner.js:160652:78\n    at tryCatcher (http://localhost:64973/__cypress/runner/cypress_runner.js:13022:23)\n    at http://localhost:64973/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (http://localhost:64973/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:64973/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:64973/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:64973/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:64973/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:64973/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:64973/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:64973/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:64973/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at eval (http://localhost:64973/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:212:12)\nat Array.forEach (<anonymous>)\n    at Context.eval (http://localhost:64973/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:210:25)",
+                "estack": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did:example_222\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n    at http://localhost:49961/__cypress/runner/cypress_runner.js:160652:78\n    at tryCatcher (http://localhost:49961/__cypress/runner/cypress_runner.js:13022:23)\n    at http://localhost:49961/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (http://localhost:49961/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:49961/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:49961/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:49961/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:49961/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:49961/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:49961/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:49961/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:49961/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at eval (http://localhost:49961/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:212:12)\nat Array.forEach (<anonymous>)\n    at Context.eval (http://localhost:49961/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:210:25)",
                 "diff": null
               },
-              "uuid": "fad401dd-11f5-4ca6-bddd-b5d822432809",
-              "parentUUID": "e675b17f-5c36-46c7-8d35-ac97913bd9ce",
+              "uuid": "258e026e-6b97-4d3c-b5c4-d9464160f607",
+              "parentUUID": "a8db4d8c-6458-4917-a5b5-b7092cc57bed",
               "isHook": false,
               "skipped": false
             }
@@ -275,17 +275,17 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "fad401dd-11f5-4ca6-bddd-b5d822432809"
+            "258e026e-6b97-4d3c-b5c4-d9464160f607"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 5047,
+          "duration": 5051,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "1b6224d7-859b-4a3f-8579-bdf5adca0be0",
+          "uuid": "81372028-90f7-4a2f-878f-68127eaa5ce5",
           "title": "Test Scenario 7: DID URLs with fragments",
           "fullFile": "",
           "file": "",
@@ -296,7 +296,7 @@
               "title": "Can resolve a DID with a fragment",
               "fullTitle": "Test Scenario 7: DID URLs with fragments Can resolve a DID with a fragment",
               "timedOut": null,
-              "duration": 5053,
+              "duration": 5048,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -306,11 +306,11 @@
               "code": "cy.fixture(\"../fixtures/example_dids.json\").its(\"fragmentDids\").then(list => {\n  Object.keys(list).forEach(key => {\n    const fragmentDid = list[key];\n    cy.request({\n      method: \"GET\",\n      url: \"https://dev.uniresolver.io/1.0/identifiers/\" + fragmentDid,\n      failOnStatusCode: false,\n      headers: {\n        Accept: \"application/did+ld+json\"\n      }\n    }).as(\"request\");\n    cy.get(\"@request\").then(response => {\n      console.log(response);\n      expect(response.status).to.eq(200);\n      expect(response.headers[\"content-type\"]).to.contain(\"application/did+ld+json\");\n      expect(response.body).not.to.have.property(\"didDocument\");\n      expect(response.body).to.have.property(\"@context\"); //FAILS\n      expect(response.body).to.have.property(\"type\");\n      expect(response.body).to.have.property(\"id\"); // FAILS\n      expect(response.body[\"id\"]).to.contain(fragmentDid.split(\"#\")[0]);\n    });\n  });\n});",
               "err": {
                 "message": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did%3Asov%3AWRfXPg8dantKVubE3HX8pw%23key-1\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request",
-                "estack": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did%3Asov%3AWRfXPg8dantKVubE3HX8pw%23key-1\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n    at http://localhost:64973/__cypress/runner/cypress_runner.js:160652:78\n    at tryCatcher (http://localhost:64973/__cypress/runner/cypress_runner.js:13022:23)\n    at http://localhost:64973/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (http://localhost:64973/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:64973/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:64973/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:64973/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:64973/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:64973/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:64973/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:64973/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:64973/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at eval (http://localhost:64973/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:230:12)\nat Array.forEach (<anonymous>)\n    at Context.eval (http://localhost:64973/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:228:25)",
+                "estack": "CypressError: `cy.request()` timed out waiting `5000ms` for a response from your server.\n\nThe request we sent was:\n\nMethod: GET\nURL: https://dev.uniresolver.io/1.0/identifiers/did%3Asov%3AWRfXPg8dantKVubE3HX8pw%23key-1\n\nNo response was received within the timeout.\n\nhttps://on.cypress.io/request\n    at http://localhost:49961/__cypress/runner/cypress_runner.js:160652:78\n    at tryCatcher (http://localhost:49961/__cypress/runner/cypress_runner.js:13022:23)\n    at http://localhost:49961/__cypress/runner/cypress_runner.js:8144:41\n    at tryCatcher (http://localhost:49961/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (http://localhost:49961/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (http://localhost:49961/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (http://localhost:49961/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (http://localhost:49961/__cypress/runner/cypress_runner.js:11135:18)\n    at _drainQueueStep (http://localhost:49961/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (http://localhost:49961/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://localhost:49961/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (http://localhost:49961/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at eval (http://localhost:49961/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:230:12)\nat Array.forEach (<anonymous>)\n    at Context.eval (http://localhost:49961/__cypress/tests?p=cypress/integration/uniresolver_fixtures_spec.js:228:25)",
                 "diff": null
               },
-              "uuid": "749a8a2b-9a3c-4e1b-84b0-83282234da06",
-              "parentUUID": "1b6224d7-859b-4a3f-8579-bdf5adca0be0",
+              "uuid": "592dffea-e217-425b-a36e-2aa0db512e01",
+              "parentUUID": "81372028-90f7-4a2f-878f-68127eaa5ce5",
               "isHook": false,
               "skipped": false
             }
@@ -318,11 +318,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "749a8a2b-9a3c-4e1b-84b0-83282234da06"
+            "592dffea-e217-425b-a36e-2aa0db512e01"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 5053,
+          "duration": 5048,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
