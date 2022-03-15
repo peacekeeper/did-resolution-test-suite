@@ -1,5 +1,5 @@
 describe("Test Scenario 1: DID Resolution Result fixtures", () => {
-  it("A correct DID can be resolved", () => {
+  it.only("A correct DID can be resolved", () => {
     cy.fixture("../fixtures/example_dids.json")
       .its("normalDids")
       .then((list) => {
