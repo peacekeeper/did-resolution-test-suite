@@ -25,5 +25,5 @@ npm run test
 
 
 ### Where to find the test reports
-The results will be stored in a local folder /cypress/reports/mocha. Test results in this folder contain the result of each spec in a json format. A merged or combined result of all specs can be found in the local folder /cypress/reports/mochareports. A combined result is stored in both a json file and an HTML file. 
+The results will be stored in a local folder _/cypress/reports/mocha_. Test results in this folder contain the result of each spec in a json format. A merged or combined result of all specs can be found in the local folder _/cypress/reports/mochareports_. A combined result is stored in both a json file and an HTML file. 
 
