@@ -1,42 +1,46 @@
 const endpoint = Cypress.env("endpoint");
-describe("Test Scenario 1: DID Resolution Result overview: " + endpoint, () => {
-  beforeEach(() => {
-    cy.request({
-      method: "GET",
-      url: endpoint + "did:sov:WRfXPg8dantKVubE3HX8pw",
-    }).as("request");
-  });
+const endpointName = "dev uniresolver";
+describe(
+  "Test Scenario 1: DID Resolution Result overview: " + endpointName,
+  () => {
+    beforeEach(() => {
+      cy.request({
+        method: "GET",
+        url: endpoint + "did:sov:WRfXPg8dantKVubE3HX8pw",
+      }).as("request");
+    });
 
-  it.only("MUST return HTTP code 200", () => {
-    cy.get("@request").then((response) => {
-      expect(response.status).to.eq(200);
+    it("MUST return HTTP code 200", () => {
+      cy.get("@request").then((response) => {
+        expect(response.status).to.eq(200);
+      });
     });
-  });
 
-  it('Should have header with Content-Type with value application/ld+json;profile="https://w3id.org/did-resolution" ', () => {
-    cy.get("@request").then((response) => {
-      expect(response.headers["content-type"]).to.contain(
-        'application/ld+json;profile="https://w3id.org/did-resolution'
-      );
+    it('Should have header with Content-Type with value application/ld+json;profile="https://w3id.org/did-resolution" ', () => {
+      cy.get("@request").then((response) => {
+        expect(response.headers["content-type"]).to.contain(
+          'application/ld+json;profile="https://w3id.org/did-resolution'
+        );
+      });
     });
-  });
 
-  it("Must contain property didDocument", () => {
-    cy.get("@request").then((response) => {
-      expect(response.body).to.have.property("didDocument");
+    it("Must contain property didDocument", () => {
+      cy.get("@request").then((response) => {
+        expect(response.body).to.have.property("didDocument");
+      });
     });
-  });
-  it("Must contain property didResolutionMetadata", () => {
-    cy.get("@request").then((response) => {
-      expect(response.body).to.have.property("didResolutionMetadata");
+    it("Must contain property didResolutionMetadata", () => {
+      cy.get("@request").then((response) => {
+        expect(response.body).to.have.property("didResolutionMetadata");
+      });
     });
-  });
-  it("Must contain property didDocumentMetadata", () => {
-    cy.get("@request").then((response) => {
-      expect(response.body).to.have.property("didDocumentMetadata");
+    it("Must contain property didDocumentMetadata", () => {
+      cy.get("@request").then((response) => {
+        expect(response.body).to.have.property("didDocumentMetadata");
+      });
     });
-  });
-});
+  }
+);
 
 describe("Test Scenario 2: JSON-LD DID document", () => {
   beforeEach(() => {

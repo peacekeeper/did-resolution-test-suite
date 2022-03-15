@@ -1,43 +1,47 @@
 const endpoint = Cypress.env("endpoint");
+const endpointName = "dev uniresolver";
 
-describe("Test Scenario 1: DID Resolution Result fixtures: " + endpoint, () => {
-  it.only("A correct DID can be resolved", () => {
-    cy.fixture("../fixtures/example_dids.json")
-      .its("normalDids")
-      .then((list) => {
-        Object.keys(list).forEach((key) => {
-          const normalDid = list[key];
-          cy.request({
-            method: "GET",
-            url: endpoint + normalDid,
-          }).as("request");
+describe(
+  "Test Scenario 1: DID Resolution Result fixtures: " + endpointName,
+  () => {
+    it("A correct DID can be resolved", () => {
+      cy.fixture("../fixtures/example_dids.json")
+        .its("normalDids")
+        .then((list) => {
+          Object.keys(list).forEach((key) => {
+            const normalDid = list[key];
+            cy.request({
+              method: "GET",
+              url: endpoint + normalDid,
+            }).as("request");
 
-          cy.get("@request").then((response) => {
-            cy.log(Cypress.env("apiUrl"));
-            expect(response.status).to.eq(200);
+            cy.get("@request").then((response) => {
+              cy.log(Cypress.env("apiUrl"));
+              expect(response.status).to.eq(200);
+            });
+
+            cy.get("@request").then((response) => {
+              expect(response.headers["content-type"]).to.contain(
+                'application/ld+json;profile="https://w3id.org/did-resolution'
+              );
+            });
+
+            cy.get("@request").then((response) => {
+              expect(response.body).to.have.property("didDocument");
+            });
+
+            cy.get("@request").then((response) => {
+              expect(response.body).to.have.property("didResolutionMetadata");
+            });
+
+            cy.get("@request").then((response) => {
+              expect(response.body).to.have.property("didDocumentMetadata");
+            });
           });
-
-          // cy.get("@request").then((response) => {
-          //   expect(response.headers["content-type"]).to.contain(
-          //     'application/ld+json;profile="https://w3id.org/did-resolution'
-          //   );
-          // });
-          //
-          // cy.get("@request").then((response) => {
-          //   expect(response.body).to.have.property("didDocument");
-          // });
-          //
-          // cy.get("@request").then((response) => {
-          //   expect(response.body).to.have.property("didResolutionMetadata");
-          // });
-          //
-          // cy.get("@request").then((response) => {
-          //   expect(response.body).to.have.property("didDocumentMetadata");
-          // });
         });
-      });
-  });
-});
+    });
+  }
+);
 
 describe("Test Scenario 2: JSON-LD DID document", () => {
   it("A correct DID can be resolved with header input", () => {

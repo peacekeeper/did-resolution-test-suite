@@ -1,8 +1,8 @@
 {
   "projectId": "q89zew",
   "defaultCommandTimeout": 5000,
-  "responseTimeout": 30000,
-  "requestTimeout": 30000,
+  "responseTimeout": 5000,
+  "requestTimeout": 5000,
   "scripts": {
     "cypress:open": "cypress open"
   },
@@ -15,8 +15,8 @@
     "json": true
   },
   "env": {
-    "endpoint1": "https://api.godiddy.com/0.1.0/universal-resolver/identifiers/",
-    "endpoint": "https://dev.uniresolver.io/1.0/identifiers/",
+    "endpoint": "https://api.godiddy.com/0.1.0/universal-resolver/identifiers/",
+    "endpoint1": "https://dev.uniresolver.io/1.0/identifiers/",
     "endpoint3": "https://resolver.svip.danubetech.com/1.0/identifiers/"
   },
   "video": false,
