@@ -12,7 +12,7 @@
     "pretest": "npm run clean:reports",
     "scripts": "cypress run",
     "combine-reports": "mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
-    "generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "generate-report": "marge cypress/reports/mochareports/report.json -f reports -o cypress/reports/mochareports",
     "posttest": "npm run combine-reports && npm run generate-report",
     "slack-message": "npx cypress-slack-reporter --report-dir cypress/reports/mochareports/",
     "slack-message-2": "npx cypress-slack-reporter --report-dir cypress/reports/mochareports --ci-provider custom --custom-url ~/cypress/reports/mochareports/report.html",

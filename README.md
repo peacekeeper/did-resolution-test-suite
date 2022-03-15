@@ -8,9 +8,14 @@ This page shows the results of several API tests. The following endpoints are te
 In the current version of this repository, the report of https://dev.uniresolver.io/1.0/identifiers/ is shown. 
 
 ### Running the report
+
+Running the tests locally: 
 ```markdown
 npm run test
 ```
+
+
+
 
 
 <!-- You can use the [editor on GitHub](https://github.com/danubetech/did-resolution-test-suite/edit/slack-reporter/README.md) to maintain and preview the content for your website in Markdown files.
