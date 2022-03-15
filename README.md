@@ -1,6 +1,19 @@
-## Welcome to GitHub Pages
+## HTML reports
 
-You can use the [editor on GitHub](https://github.com/danubetech/did-resolution-test-suite/edit/slack-reporter/README.md) to maintain and preview the content for your website in Markdown files.
+This page shows the results of several API tests. The following endpoints are tested:
+- https://dev.uniresolver.io/1.0/identifiers/
+- https://resolver.svip.danubetech.com/1.0/identifiers/
+- https://api.godiddy.com/0.1.0/universal-resolver/identifiers/
+
+In the current version of this repository, the report of https://dev.uniresolver.io/1.0/identifiers/ is shown. 
+
+### Running the report
+```markdown
+npm run test
+```
+
+
+<!-- You can use the [editor on GitHub](https://github.com/danubetech/did-resolution-test-suite/edit/slack-reporter/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
@@ -27,11 +40,4 @@ Syntax highlighted code block
 ```
 
 For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/danubetech/did-resolution-test-suite/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+ -->
