@@ -1,9 +1,9 @@
 ---
 
-`---
-layout: default
+---
+#layout: default
 title: Home
----`
+---
 
 # The report can be found [here](https://danubetech.github.io/did-resolution-test-suite/reportsss.html).
 
@@ -16,9 +16,9 @@ In the current version of this repository, the report of https://resolver.svip.d
 
 {% include reportss.html %}
 
-### Run the code 
+### Run the code
 
-To run the tests locally: 
+To run the tests locally:
 
 `npm run test
 `
